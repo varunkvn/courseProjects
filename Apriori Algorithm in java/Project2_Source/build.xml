@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="project2.makejar" default="makejar" basedir=".">
+  <target name ="makejar" description="Create a jar for the project2">
+    <jar jarfile="Project2.jar" includes="*.class" basedir="bin"/>
+  </target>
+</project>

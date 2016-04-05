@@ -1,0 +1,7 @@
+<script type='text/javascript'>
+if (typeof java === 'undefined') {
+    document.write("Java is not installed.");
+} else {
+    document.write("java.version " + java.lang.System.getProperty("java.version"));
+}
+</script>

@@ -1,0 +1,512 @@
+text(wcd_data, labels=kmeans$cluster, col=kmeans$cluster)
+text(wcd_data, labels="black", col=kmeans$cluster)
+text(wcd_data, labels=kmeans$cluster, col=kmeans$center)
+plot(wcd_data[c("Fresh","Grocery")],col=kmeans$cluster,main="K-Mean Clustering")
+text(wcd_data, labels=kmeans$cluster, col=kmeans$center)
+##############################################################################
+# Data set 1 (Wholesale customers data.csv)
+#Description: This dataset involves a number of distinct, though not usually
+#             independent, random variables. This dataset is well suited for
+#               performing classification and clustering algorithms on it.
+#               There are 440 instances,8 attributes and no missing values
+#               in this dataset
+#############################################################################
+#read data using CSV
+wcd_data<-read.csv("C:\\Users\\Kavalipurapu\\Desktop\\New folder\\wcd.csv", header = TRUE, sep=",");
+View(wcd_data)
+##############################################################################
+#Load and install packages
+###############################################################################
+#Kmeans algorithm for the data set
+require(graphics)
+plot(data)
+kmeans<-kmeans(data,centers=3)
+kmeans$centers
+kmeans$cluster
+plot(wcd_data,col=kmeans$cluster)
+plot(wcd_data[c("Fresh","Grocery")],col=kmeans$cluster,main="K-Mean Clustering")
+text(wcd_data, labels=kmeans$cluster, col=kmeans$center)
+##############################################################################
+# Data set 1 (Wholesale customers data.csv)
+#Description: This dataset involves a number of distinct, though not usually
+#             independent, random variables. This dataset is well suited for
+#               performing classification and clustering algorithms on it.
+#               There are 440 instances,8 attributes and no missing values
+#               in this dataset
+#############################################################################
+#read data using CSV
+wcd_data<-read.csv("C:\\Users\\Kavalipurapu\\Desktop\\New folder\\wcd.csv", header = TRUE, sep=",");
+View(wcd_data)
+##############################################################################
+#Load and install packages
+###############################################################################
+#Kmeans algorithm for the data set
+require(graphics)
+plot(data)
+kmeans<-kmeans(data,centers=3)
+kmeans$centers
+kmeans$cluster
+plot(wcd_data,col=kmeans$cluster)
+plot(wcd_data[c("Fresh","Grocery")],col=kmeans$cluster,main="K-Mean Clustering")
+text(wcd_data, labels=kmeans$cluster, col=kmeans$center)
+plot(wcd_data,col=kmeans$cluster)
+plot(wcd_data[c("Fresh","Grocery")],col=kmeans$cluster,main="K-Mean Clustering")
+text(wcd_data, labels=kmeans$cluster, col=kmeans$center)
+kmeans<-kmeans(data,3)
+kmeans$centers
+plot(wcd_data[c("Fresh","Grocery")],col=kmeans$cluster,main="K-Mean Clustering")
+text(wcd_data, labels=kmeans$cluster, col=kmeans$center)
+points(kmeans$centers,pch=8)
+points(kmeans$centers,pch=16)
+plot(wcd_data[c("Fresh","Region")],col=kmeans$cluster,main="K-Mean Clustering")
+text(wcd_data, labels=kmeans$cluster, col=kmeans$center)
+plot(wcd_data,col=kmeans$cluster)
+points(kmeans$centers,pch=16)
+plot(wcd_data[c("Fresh","Region")],col=kmeans$cluster,main="K-Mean Clustering")
+text(wcd_data, labels=kmeans$cluster, col=kmeans$center)
+points(kmeans$centers,pch=16)
+text(wcd_data, labels=kmeans$center, col=kmeans$center)
+points(kmeans$centers,pch=16)
+points(kmeans$center,pch=16)
+text(wcd_data, labels=kmeans$center, col=kmeans$cluster)
+plot(wcd_data[c("Fresh","Region")],col=kmeans$cluster,main="K-Mean Clustering")
+text(wcd_data, labels=kmeans$center, col=kmeans$cluster)
+points(kmeans$center,pch=16)
+text(wcd_data, labels=kmeans$cluster, col=kmeans$cluster)
+plot(wcd_data[c("Fresh","Region")],col=kmeans$cluster,main="K-Mean Clustering")
+text(wcd_data, labels=kmeans$cluster, col=kmeans$center)
+points(kmeans$centers,pch=16)
+dumd_data<-read.csv("C:\\Users\\Kavalipurapu\\Desktop\\New folder\\dumd.csv", header = TRUE, sep=",");
+dumd_data<-read.table("C:\\Users\\Kavalipurapu\\Desktop\\New folder\\dumd.xls", header = TRUE, sep=",");
+dumd_data<-read.xls("C:\\Users\\Kavalipurapu\\Desktop\\New folder\\dumd.xls", header = TRUE, sep=",");
+library(gdata)
+install.packages("gdata")
+dumd_data<-read.xls("C:\\Users\\Kavalipurapu\\Desktop\\New folder\\dumd.xls", header = TRUE, sep=",");
+library(gdata)
+dumd_data<-read.xls("C:\\Users\\Kavalipurapu\\Desktop\\New folder\\dumd.xls", header = TRUE, sep=",");
+dumd_data<-read.xls("C:\\Users\\Kavalipurapu\\Desktop\\New folder\\dumd.xls");
+dumd_data<-read.csv("C:\\Users\\Kavalipurapu\\Desktop\\New folder\\q.csv");
+View(wcd_data)
+View(duwd_data)
+##############################################################################
+dumd_data<-read.csv("C:\\Users\\Kavalipurapu\\Desktop\\New folder\\q.csv");
+View(duwd_data)
+View(dumd_data)
+dumd_data$UNS<-NULL
+View(dumd_data)
+dumd_data$x<-NULL
+dumd_data$x.2<-NULL
+dumd_data$x.3<-NULL
+View(dumd_data)
+dumd_data$X<-NULL
+dumd_data$X.2<-NULL
+dumd_data$X.3<-NULL
+View(dumd_data)
+dumd_data$X.1<-NULL
+View(dumd_data)
+plot(dumd_data)
+require(graphics)
+plot(dumd_data)
+dumd_data.kmeans<-kmeans(dumd_data,centers=3)
+kmeans$centers
+dumd_data.kmeans$centers
+dumd_data.kmeans$cluster
+plot(dumd_data[c("Fresh","Grocery")],col=dumd_data.kmeans$cluster,main="K-Mean Clustering")
+plot(dumd_data[c("STG","STR")],col=dumd_data.kmeans$cluster,main="K-Mean Clustering")
+text(dumd_data, labels=dumd_data.kmeans$cluster, col=dumd_data.kmeans$center)
+plot(dumd_data,col=dumd_data.kmeans$cluster)
+text(dumd_data, labels=dumd_data.kmeans$cluster, col=dumd_data.kmeans$cluster)
+dumd_data.kmeans$cluster
+plot(dumd_data[c("STG","STR")],col=dumd_data.kmeans$cluster,main="K-Mean Clustering")
+text(dumd_data, labels=dumd_data.kmeans$cluster, col=dumd_data.kmeans$cluster)
+plot(dumd_data,col=dumd_data.kmeans$cluster)
+plot(dumd_data[c("STG","STR")],col=dumd_data.kmeans$cluster,main="K-Mean Clustering")
+text(dumd_data, labels=dumd_data.kmeans$cluster, col=dumd_data.kmeans$cluster)
+plot(dumd_data.kmeans,type='n')
+h_wcd_data<-read.csv("C:\\Users\\Kavalipurapu\\Desktop\\New folder\\wcd.csv", header = TRUE, sep=",");
+View(h_wcd_data)
+install.packages("cluster")
+library(cluster)
+install.packages("cluster")
+dv <- diana(data, metric = "euclidean", stand = TRUE)
+print(dv)
+plot(dv)
+library(cluster)
+library(graphics)
+getwd()
+h_wcd_data<-read.csv("C:\\Users\\Kavalipurapu\\Desktop\\New folder\\wcd.csv", header = TRUE, sep=",");
+dm<- dist(as.matrix(h_wcd_data))
+dm
+ag<-diana(dm, diss=FALSE, metric="euclidean",FALSE, method="single")
+install.packages("cluster")
+library(cluster)
+install.packages("cluster")
+library(cluster)
+library(graphics)
+ag<-diana(dm, diss=FALSE, metric="euclidean",FALSE, method="single")
+ag<-diana(dm, diss=FALSE, metric="euclidean",FALSE, method="complete")
+ag<-diana(dm, diss=FALSE, metric="euclidean")
+print(ag)
+plot(ag,FALSE,NULL, main="AGNES manhattan", nmax.lab=30, max.strlen=10)
+plot(ag,FALSE,NULL, main="AGNES Euclidean", nmax.lab=30, max.strlen=20)
+install.packages("pvclust")
+install.packages("pvclust")
+install.packages("clust")
+install.packages("pvclust")
+install.packages("pvclust")
+distance<-dist(transfusiondata,method="euclidean")
+distance<-dist(h_wcd_data,method="euclidean")
+hc<-hclust(distance,method="ward.D")
+#To display dendogram
+plot(hc)
+# cut tree into 5 clusters
+tracks<-cutree(hc,k=5)
+#Draw dendogram with green colour in 5 clusters
+rect.hclust(hc,k=5,border="green")
+dm<- dist(as.matrix(h_wcd_data))
+dm
+dv <- diana(dm, metric = "euclidean", stand = TRUE,diss=FALSE)
+print(dv)
+plot(dv,FALSE,NULL, main="AGNES Euclidean", nmax.lab=30, max.strlen=20)
+dm<- dist(as.matrix(h_wcd_data))
+dm
+dv <- diana(dm, metric = "euclidean", stand = TRUE,diss=FALSE)
+print(dv)
+plot(dv,FALSE,NULL, main="DIANA Algorithm using Euclidean distance", nmax.lab=30, max.strlen=20)
+distance_matrix<-dist(h_wcd_data,method="euclidean")
+hc<-hclust(distance_matrix,method="ward.D")
+#To display dendogram
+plot(hc)
+# cut tree into 5 clusters
+tracks<-cutree(hc,k=5)
+#Draw dendogram with green colour in 5 clusters
+plot(tracks)
+plot(tracks)
+rect.hclust(hc,k=5,border="green")
+hc<-pvclust(h_wcd_data,method.hclust="ward.D",method.dist="euclidean")
+plot(hc)
+pvrect(hc,alpha=1)
+h_dm<- dist(as.matrix(h_dumd_data))
+h_dumd_data<-read.csv("C:\\Users\\Kavalipurapu\\Desktop\\New folder\\q.csv", header = TRUE, sep=",");
+View(h_dumd_data)
+wss <- (nrow(h_dumd_data)-1)*sum(apply(h_dumd_data,2,var))
+for (i in 2:15) wss[i] <- sum(kmeans(h_dumd_data,
+centers=i)$withinss)
+plot(1:15, wss, type="b", xlab="Number of Clusters",
+ylab="Within groups sum of squares")
+print(wss)
+ss <- (nrow(h_dumd_data)-1)*sum(apply(h_dumd_data,2,var))
+for (i in 2:15) wss[i] <- sum(kmeans(h_dumd_data,
+centers=i)$withinss)
+wss <- (nrow(h_dumd_data)-1)*sum(apply(h_dumd_data,2,var))
+print(wss)
+for (i in 2:15)
+{
+wss[i] <- sum(kmeans(h_dumd_data, centers=i)$withinss)
+}
+View(h_dumd_data)
+for (i in 2:15)
+{
+wss[i] <- sum(kmeans(h_dumd_data, centers=i)$LPR)
+}
+n = 100
+g = 6
+set.seed(g)
+d <- data.frame(x = unlist(lapply(1:g, function(i) rnorm(n/g, runif(1)*i^2))),
+y = unlist(lapply(1:g, function(i) rnorm(n/g, runif(1)*i^2))))
+plot(d)
+mydata <- d
+wss <- (nrow(mydata)-1)*sum(apply(mydata,2,var))
+for (i in 2:15) wss[i] <- sum(kmeans(mydata,
+centers=i)$withinss)
+plot(1:15, wss, type="b", xlab="Number of Clusters",
+ylab="Within groups sum of squares")
+library(fpc)
+pamk.best <- pamk(d)
+cat("number of clusters estimated by optimum average silhouette width:", pamk.best$nc, "\n")
+plot(pam(d, pamk.best$nc))
+require(vegan)
+fit <- cascadeKM(scale(d, center = TRUE,  scale = TRUE), 1, 10, iter = 1000)
+plot(fit, sortg = TRUE, grpmts.plot = TRUE)
+calinski.best <- as.numeric(which.max(fit$results[2,]))
+cat("Calinski criterion optimal number of clusters:", calinski.best, "\n")
+# 5 clusters!
+install.packages("vegan")
+fit <- cascadeKM(scale(d, center = TRUE,  scale = TRUE), 1, 10, iter = 1000)
+plot(fit, sortg = TRUE, grpmts.plot = TRUE)
+calinski.best <- as.numeric(which.max(fit$results[2,]))
+cat("Calinski criterion optimal number of clusters:", calinski.best, "\n")
+# 5 clusters!
+fit <- cascadeKM(scale(d, center = TRUE,  scale = TRUE), 1, 10, iter = 1000)
+# Get some random numbers
+rnorm(20)
+# Get some more random numbers
+rnorm(20)
+#They shouldn't be the same numbers...
+#If we want to be able to reproduce our works
+#later it would be nice if we would get the
+#same numbers
+#Let's set a seed first
+set.seed(2)
+rnorm(20)
+#Now if we want the same random numbers
+#we can just set the seed to the same thing
+set.seed(2)
+rnorm(20)
+#hurray
+n = 100
+g = 6
+set.seed(g)
+d <- data.frame(x = unlist(lapply(1:g, function(i) rnorm(n/g, runif(1)*i^2))),
+y = unlist(lapply(1:g, function(i) rnorm(n/g, runif(1)*i^2))))
+plot(d)
+plot(d,col=4)
+mydata <- d
+wss <- (nrow(mydata)-1)*sum(apply(mydata,2,var))
+for (i in 2:15) wss[i] <- sum(kmeans(mydata,
+centers=i)$withinss)
+plot(1:15, wss, type="b", xlab="Number of Clusters",
+ylab="Within groups sum of squares")
+wcd_data<-read.csv("C:\\Users\\Kavalipurapu\\Desktop\\New folder\\wcd.csv", header = TRUE, sep=",");
+View(wcd_data)
+mydata <- wcd_data
+wss <- (nrow(mydata)-1)*sum(apply(mydata,2,var))
+for (i in 2:15) wss[i] <- sum(kmeans(mydata,
+centers=i)$withinss)
+plot(1:15, wss, type="b", xlab="Number of Clusters",
+ylab="Within groups sum of squares")
+plot(wss)
+plot(1:15, wss, type="b", xlab="Number of Clusters",
+ylab="Within groups sum of squares")
+for (i in 2:208) wss[i] <- sum(kmeans(mydata,
+centers=i)$withinss)
+plot(1:208, wss, type="b", xlab="Number of Clusters",
+ylab="Within groups sum of squares")
+library(fpc)
+pamk.best <- pamk(d)
+cat("number of clusters estimated by optimum average silhouette width:", pamk.best$nc, "\n")
+plot(pam(d, pamk.best$nc))
+pamk.best <- pamk(mydata)
+cat("number of clusters estimated by optimum average silhouette width:", pamk.best$nc, "\n")
+plot(pam(d, pamk.best$nc))
+pamk.best
+cat("number of clusters estimated by optimum average silhouette width:", pamk.best$medoids, "\n")
+pamk.best$medioids
+pamk.best$clustering
+pamk.best <- pamk(mydata)
+pamk.best
+cat("number of clusters estimated by optimum average silhouette width:", pamk.best$nc, "\n")
+plot(pam(d, pamk.best$nc))
+wcd_data<-read.csv("C:\\Users\\Kavalipurapu\\Desktop\\New folder\\iris.csv", header = TRUE, sep=",");
+wcd_data<-read.csv("C:\\Users\\Kavalipurapu\\Desktop\\New folder\\iris.csv", header = TRUE, sep=",");
+View(wcd_data)
+mydata <- wcd_data
+wss <- (nrow(mydata)-1)*sum(apply(mydata,2,var))
+for (i in 2:15) wss[i] <- sum(kmeans(mydata,
+centers=i)$withinss)
+View(wcd_data)
+wcd_data$species<-NULL
+mydata <- wcd_data
+for (i in 2:15) wss[i] <- sum(kmeans(mydata,
+wss <- (nrow(mydata)-1)*sum(apply(mydata,2,var))
+for (i in 2:15) wss[i] <- sum(kmeans(mydata,
+centers=i)$withinss)
+wcd_data$species<-NULL
+mydata <- wcd_data
+wss <- (nrow(mydata)-1)*sum(apply(mydata,2,var))
+for (i in 2:15) wss[i] <- sum(kmeans(mydata,
+centers=i)$withinss)
+plot(1:15, wss, type="b", xlab="Number of Clusters",
+ylab="Within groups sum of squares")
+plot(ws)
+library(fpc)
+pamk.best <- pamk(mydata)
+pamk.best
+pamk.best$clustering
+cat("number of clusters estimated by optimum average silhouette width:", pamk.best$nc, "\n")
+plot(pam(d, pamk.best$nc))
+wcd_data<-read.csv("C:\\Users\\Kavalipurapu\\Desktop\\New folder\\iris.csv", header = TRUE, sep=",");
+View(wcd_data)
+wcd_data$species<-NULL
+mydata <- wcd_data
+print(mydata)
+pamk.best <- pamk(mydata)
+print(pamk.best)
+dm<- dist(as.matrix(h_wcd_data))
+dm
+dv <- diana(dm, metric = "euclidean", stand = TRUE,diss=FALSE)
+print(dv)
+plot(dv,FALSE,NULL, main="DIANA Algorithm using Euclidean distance", nmax.lab=30, max.strlen=20)
+cut.tree<-cut(dv,10)
+a<-as.dendogram(dv)
+library(stats)
+a<-as.dendogram(dv)
+print(dv)
+a<-as.dendogram(dv)
+install.packages("stats")
+install.packages("stats")
+library(stats)
+a<-as.dendogram(dv)
+dv <- agnes(dm, metric = "euclidean", stand = TRUE,diss=FALSE)
+ag <- agnes(dm, metric = "euclidean", stand = TRUE,diss=FALSE)
+print(ag)
+a<-as.dendogram(dv)
+a<-as.dendogram(ag)
+remove.packages(stats)
+remove.packages("stats")
+a<-as.dendogram(ag)
+install.packages("stats")
+install.packages("stats")
+install.packages("stats")
+install.packages("stats")
+install.packages("stats")
+install.packages("stats")
+a<-as.dendogram(ag)
+table(clusters$Best.n[1,])
+wcd_data<-read.csv("wcd.csv", header = TRUE, sep=",");
+setwd("C:\\Users\\Kavalipurapu\\Desktop\\New folder\\project1_part2")
+wcd_data<-read.csv("wcd.csv", header = TRUE, sep=",");
+print(wcd_data)
+##############################################################################
+#Load and install packages
+#install.packages("NbClust")
+library(NbClust)
+###############################################################################
+#Kmeans algorithm for the data set
+#Determine the number of clusters to be used in K-means
+Number_of_clusters <- function(data, count=15, seed=1111){
+number <- (nrow(data)-1)*sum(apply(data,2,var))
+for (i in 2:count){
+set.seed(seed)
+number[i] <- sum(kmeans(data, centers=i)$withinss)}
+plot(1:count, number, type="b", xlab="Number of Clusters",
+ylab="Within groups sum of squares")}
+Number_of_clusters(wcd_data)
+set.seed(1111)
+clusters <- NbClust(wcd_data, min.nc=2, max.nc=15, method="kmeans")
+table(clusters$Best.n[1,])
+###Based on the number of clusters obtained, we perform kmeans algorithm
+# Start the clock!
+ptm <- proc.time()
+kmeans <- kmeans(wcd_data, 3)
+# Stop the clock
+proc.time() - ptm
+print(kmeans)
+kmeans$size
+kmeans$centers
+plot(wcd_data1,col=kmeans$cluster)
+plot(wcd_data,col=kmeans$cluster)
+points(kmeans$centers,pch=32)
+plot(wcd_data[c("STR","STG")],col=kmeans$cluster,main="K-Mean Clustering")
+plot(wcd_data[c("Milk","Grocery")],col=kmeans$cluster,main="K-Mean Clustering")
+text(wcd_data1, labels=kmeans$cluster, col=kmeans$cluster)
+plot(wcd_data[c("Milk","Grocer")],col=kmeans$cluster,main="K-Mean Clustering")
+text(wcd_data, labels=kmeans$cluster, col=kmeans$cluster)
+points(kmeans$centers,pch=16)
+##############################################################################
+# Data set 1 (Wholesale customers data)
+#Description: This dataset involves a number of distinct, though not usually
+#             independent, random variables. This dataset is well suited for
+#             performing classification and clustering algorithms on it.
+#             There are 440 instances,8 attributes and no missing values
+#             in this dataset
+#############################################################################
+#read data from  CSV file
+h_wcd_data<-read.csv("wcd.csv", header = TRUE, sep=",");
+View(h_wcd_data)
+library(cluster)
+dm<- dist(as.matrix(h_wcd_data))
+print(dm)
+diana <- diana(dm, metric = "euclidean", stand = TRUE,diss=FALSE)
+print(diana,main="Original_tree")
+a<-as.dendrogram(diana)
+b<-cut(a,2000)
+frame<-par(mfrow=c(1,2))
+plot(a,main="original",sub="Dendrogram of the dataset")
+plot(b$lower[[1]],main="After Cut",sub="dendrogram after cut")
+##Calculating Time complexity
+# Start the clock!
+ptm <- proc.time()
+time_complexity_diana<-diana(dm, metric = "euclidean", stand = TRUE,diss=FALSE)
+# Stop the clock
+ptm <- proc.time()
+kmeans <- kmeans(wcd_data, 3,nstart=25)
+# Stop the clock
+#read data from  CSV file
+wcd_data1<-read.csv("dumd.csv", header = TRUE, sep=",");
+print(wcd_data1)
+##############################################################################
+#Load and install packages
+library(NbClust)
+###############################################################################
+#Kmeans algorithm for the data set
+#Determine the number of clusters to be used in K-means
+Number_of_clusters <- function(data, count=15, seed=1111){
+number <- (nrow(data)-1)*sum(apply(data,2,var))
+for (i in 2:count){
+set.seed(seed)
+number[i] <- sum(kmeans(data, centers=i)$withinss)}
+plot(1:count, number, type="b", xlab="Number of Clusters",
+ylab="Within groups sum of squares")}
+Number_of_clusters(wcd_data1)
+set.seed(1111)
+clusters <- NbClust(wcd_data1, min.nc=2, max.nc=15, method="kmeans")
+table(clusters$Best.n[1,])
+###Based on the number of clusters obtained, we perform kmeans algorithm
+ptm <- proc.time()
+kmeans <- kmeans(wcd_data, 2)
+# Stop the clock
+proc.time() - ptm
+print(kmeans)
+kmeans$size
+kmeans$centers
+plot(wcd_data1,col=kmeans$cluster)
+points(kmeans$centers,pch=32)
+source('C:/Users/Kavalipurapu/Desktop/New folder/project1_part2/K_Means_Dataset_2.R', echo=TRUE)
+install.packages("NbClust")
+plot(wcd_data1[c("STG","STR")],col=kmeans$cluster,main="K-Mean Clustering")
+points(kmeans$centers,pch=16)
+points(kmeans$centers,pch=32)
+plot(wcd_data1[c("STG","STR")],col=kmeans$cluster,main="K-Mean Clustering")
+points(kmeans$centers,pch=16)
+text(wcd_data1, labels=kmeans$cluster, col=kmeans$cluster)
+##Calculating Time complexity for the dataset K-Means
+##############################################################################
+## Hierarchical Clustering algorithm implementation on two data sets
+##############################################################################
+# Data set 2 (User Knowledge Modeling Data Set )
+#Description: This dataset involves a number of distinct, though not usually
+#             independent, random variables. This dataset is well suited for
+#             performing classification and clustering algorithms on it.
+#             There are 403 instances,5 attributes and no missing values
+#             in this dataset
+###############################################################################
+#read data from  CSV file
+h_wcd_data<-read.csv("dumd.csv", header = TRUE, sep=",");
+View(h_wcd_data)
+h_wcd_data$species<-NULL
+##############################################################################
+#Load and install packages
+#install.packages("cluster")
+library(cluster)
+###############################################################################
+dm<- dist(as.matrix(h_wcd_data))
+print(dm)
+diana <- diana(dm, metric = "euclidean", stand = TRUE,diss=FALSE)
+print(diana,main="Original_tree")
+a<-as.dendrogram(diana)
+b<-cut(a,2000)
+frame<-par(mfrow=c(1,2))
+plot(a,main="original",sub="Dendrogram of the dataset")
+plot(b$lower[[1]],main="After Cut",sub="dendrogram after cut")
+#time complexity:
+ptm <- proc.time()
+diana <- diana(dm, metric = "euclidean", stand = TRUE,diss=FALSE)
+# Stop the clock
+proc.time()
+print(diana,main="Original_tree")
+plot(a,main="original",sub="Dendrogram of the dataset")
+plot(diana)
+plot(diana,main="DIANA Lenses")
+print(diana,main="Original_tree")
+plot(diana,main="Original_tree")

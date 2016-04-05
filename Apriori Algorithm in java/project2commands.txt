@@ -1,0 +1,30 @@
+## Create jar file through command prompt
+- open command prompt
+- Go to physical locatin of the Java file (./src)
+- Type this command : "jar cf "Project2.jar" Apriori.java" 
+
+## Run the jar file
+- Go to command prompt
+- Navigate to the folder where the jar is created.
+- type this command " java -jar Project2.jar ".
+
+
+
+
+
+
+
+
+# Create jar file through Eclipse.
+## To create a JAR FILE.
+
+- Load Project into workspace 
+- Right click on build.xml-> Run As-> Ant build.
+
+An Executable jar with name "Project2.jar" will be created in the same physical location.
+
+## TO RUN THE FILE :
+
+- Go to command prompt
+- Navigate to the folder where the jar is created.
+- type this command " java -jar Project2.jar ". 

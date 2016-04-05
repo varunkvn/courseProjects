@@ -1,0 +1,104 @@
+C:\Users\Kavalipurapu\Desktop\Project2>java -jar Project2.jar
+Enter Full File path for the txt file ..
+contra.txt
+Enter Min Support count for algorithm. (Eg: 0.3)
+0.3
+Enter confidence for algorithm. (Eg: 0.7)
+0.7
+Input configuration: 50 items, 1473 transactions, Support 0.3
+
+File  is Read
+----------------------------------------------------------
+Generating 1 Freequency Itemsets
+----------------------------------------------------------
+Deleting all the transactions with support count less than given support count (
+30.0%)
+
+[0] Appeared 1398 times in the data set
+[1] Appeared 1447 times in the data set
+[2] Appeared 1106 times in the data set
+[3] Appeared 1218 times in the data set
+[4] Appeared 1139 times in the data set
+Found 5 frequent 1 items of size  (with support 30.0%)
+
+
+Created 10 Freequency2 Item Sets 2
+----------------------------------------------------------
+Generating 2 Freequency Itemsets
+----------------------------------------------------------
+Deleting all the transactions with support count less than given support count (
+30.0%)
+
+[0, 3] Appeared 1157 times in the data set
+[0, 4] Appeared 1108 times in the data set
+[0, 1] Appeared 1372 times in the data set
+[0, 2] Appeared 1045 times in the data set
+[3, 4] Appeared 907 times in the data set
+[1, 2] Appeared 1082 times in the data set
+[2, 4] Appeared 811 times in the data set
+[1, 3] Appeared 1199 times in the data set
+[2, 3] Appeared 902 times in the data set
+[1, 4] Appeared 1113 times in the data set
+
+
+
+Association rules for [0, 3] is accepted because it has crossed the minimum Conf
+idence 70.0%
+Association rules for [0, 4] is accepted because it has crossed the minimum Conf
+idence 70.0%
+Association rules for [0, 1] is accepted because it has crossed the minimum Conf
+idence 70.0%
+Association rules for [0, 2] is accepted because it has crossed the minimum Conf
+idence 70.0%
+Association rules for [1, 2] is accepted because it has crossed the minimum Conf
+idence 70.0%
+Association rules for [1, 3] is accepted because it has crossed the minimum Conf
+idence 70.0%
+Association rules for [1, 4] is accepted because it has crossed the minimum Conf
+idence 70.0%
+Found 7 frequent 2 items of size  (with support 30.0%)
+
+
+Created 9 Freequency2 Item Sets 3
+----------------------------------------------------------
+Generating 3 Freequency Itemsets
+----------------------------------------------------------
+Deleting all the transactions with support count less than given support count (
+30.0%)
+
+[0, 1, 4] Appeared 1082 times in the data set
+[0, 1, 3] Appeared 1138 times in the data set
+[0, 1, 2] Appeared 1021 times in the data set
+[0, 2, 4] Appeared 790 times in the data set
+[0, 2, 3] Appeared 852 times in the data set
+[1, 2, 3] Appeared 885 times in the data set
+[1, 2, 4] Appeared 787 times in the data set
+[0, 3, 4] Appeared 881 times in the data set
+[1, 3, 4] Appeared 888 times in the data set
+
+
+
+Association rules for [0, 1, 4] is accepted because it has crossed the minimum C
+onfidence 70.0%
+Association rules for [0, 1, 3] is accepted because it has crossed the minimum C
+onfidence 70.0%
+Found 2 frequent 3 items of size  (with support 30.0%)
+
+
+Created 1 Freequency2 Item Sets 4
+----------------------------------------------------------
+Generating 4 Freequency Itemsets
+----------------------------------------------------------
+Deleting all the transactions with support count less than given support count (
+30.0%)
+
+[0, 1, 3, 4] Appeared 862 times in the data set
+
+
+
+
+ NULL for  4 freequency ItemSets
+
+Execution time is: 0.203 seconds.
+Algorithm Terminated at Iteration 442
+Apriori Algorithm Ended

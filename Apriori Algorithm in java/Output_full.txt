@@ -1,0 +1,50 @@
+C:\Users\Kavalipurapu\Desktop\Project2>java -jar Project2.jar
+Enter Full File path for the txt file ..
+full.txt
+Enter Min Support count for algorithm. (Eg: 0.3)
+0.3
+Enter confidence for algorithm. (Eg: 0.7)
+0.7
+Input configuration: 6 items, 625 transactions, Support 0.3
+
+File  is Read
+----------------------------------------------------------
+Generating 1 Freequency Itemsets
+----------------------------------------------------------
+Deleting all the transactions with support count less than given support count (
+30.0%)
+
+[1] Appeared 369 times in the data set
+[2] Appeared 369 times in the data set
+[3] Appeared 369 times in the data set
+[4] Appeared 369 times in the data set
+[5] Appeared 369 times in the data set
+Found 5 frequent 1 items of size  (with support 30.0%)
+
+
+Created 10 Freequency2 Item Sets 2
+----------------------------------------------------------
+Generating 2 Freequency Itemsets
+----------------------------------------------------------
+Deleting all the transactions with support count less than given support count (
+30.0%)
+
+[3, 5] Appeared 194 times in the data set
+[3, 4] Appeared 194 times in the data set
+[1, 2] Appeared 194 times in the data set
+[2, 4] Appeared 194 times in the data set
+[1, 3] Appeared 194 times in the data set
+[2, 3] Appeared 194 times in the data set
+[1, 4] Appeared 194 times in the data set
+[1, 5] Appeared 194 times in the data set
+[2, 5] Appeared 194 times in the data set
+[4, 5] Appeared 194 times in the data set
+
+
+
+
+ NULL for  2 freequency ItemSets
+
+Execution time is: 0.016 seconds.
+Algorithm Terminated at Iteration 188
+Apriori Algorithm Ended
