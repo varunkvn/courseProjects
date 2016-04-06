@@ -1,0 +1,148 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+    <head>
+        <title>Blurr-effect</title>
+        
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+    </head>
+    <body>
+
+		<div id="container" class="container">
+			<ul id="menu" class="menu">
+				<li><a href="#" id="effect-p"><img src="images/1.png" alt="1"/></a></li>
+				<li><a href="#" id="effect-q"><img src="images/2.png" alt="2"/></a></li>
+				<li><a href="#" id="effect-r"><img src="images/3.png" alt="3"/></a></li>
+				<li><a href="#" id="effect-s"><img src="images/4.png" alt="4"/></a></li>
+				<li><a href="two.html" id="effect-t"><img src="images/5.png" alt="5"/></a></li>
+			</ul>
+			<div class="content">
+				<h1 class="effect-p">Climate News<h1>
+				<p class="effect-p">California's Drought Is the Worst in 1,200 Years, Evidence Suggests</p>
+
+				<p class="effect-p">As California finally experiences the arrival of a rain-bearing Pineapple Express this week, two climate scientists have shown that the drought of 2012-2014 has been the worst in 1,200 years.</p>
+				
+				<h3 class="effect-q">HEADLINES "Obama jokes about celebrities"</h3>
+				<p class="effect-q">As usual, the Kennedy Center Honors weekend provided good opportunities for presidential humor -- both by and about President Obama.</p>
+				
+				<p class="effect-q">At the White House reception on Sunday, Obama trotted out a few good lines about the honorees, including Oscar-winning actor Tom Hanks. In his film career, "Tom has flown a rocket to outer space, he's fallen in love with a mermaid, he's faced down Somali pirates, (and) mooned the President of the United States," Obama said, adding: "I'm glad he got that last one out of his system before this evening."</p>
+				<h3 class="effect-r">I am so happy, my dear friend</h3>
+				<p class="effect-r">Srinagar: Prime Minister Narendra Modi, who is scheduled to address his maiden election rally in Kashmir today, will also visit the army's Badami Bagh headquarters to pay tributes to the soldiers killed in the deadly militant attack in Uri on Friday.</p>
+				
+				
+				<p class="effect-s">Bahujan Samaj Party (BSP) supremo Mayawati on Sunday launched a scathing attack on the Bharatiya Janata Party saying the saffron party has "sold the nation to capitalists" and dented the national fabric of the country.</p>
+
+				<p class="effect-s">The United States has handed to Pakistan three prisoners including a senior Taliban militant held in Afghanistan, as Washington rushes to empty its Afghan prison before losing the legal right to detain people there at the end of the year.</p>
+
+				<p>The Narendra Modi-led government's ambitious plan to provide 24x7 power to all in the country by 2019 would involve investments of around $400 billion (about Rs.</p>
+				
+				<h3>Steel baron Lakshmi Mittal drops down South Africa's rich list</h3>
+				<p>UK-based steel baron Lakshmi Mittal has dropped further down the annual list of South Africa's wealthiest businessmen after leading the pack for six consecutive years, due to the plummeting share price of his company ArcelorMittal SA, the world's largest ..</p>
+
+
+			</div>
+		</div>
+	
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
+        <script type="text/javascript">
+			$(function() {
+
+			var $menu			= $('#menu'),
+				$container		= $('#container'),
+				$content		= $container.find('.content');
+		
+			$content
+			.find('p')
+			.addClass('effect e-fade')
+			.end()
+			.find('h1, h2, h3')
+			.addClass('effect e-fade e-color');
+
+			var $elems			= $(document).find('.effect'),
+				OverlayEffect 	= (function(){
+						
+					var speed				= 1000,
+						
+						eventOff			= 'mouseenter',
+						
+						eventOn				= 'mouseleave',
+						
+						colorOff			= '#AAAAAA',
+
+						init				= function() {
+							$elems.each(function(){
+								var $el		= $(this);
+								if($el.hasClass('e-color'))	
+									$el.data('original-color',$el.css('color'));
+							});
+							initEventsHandler();
+						},
+						
+						initEventsHandler 	= function() {
+							$menu
+							.delegate('a',eventOff,function(e){
+
+								var relation	= $(this).attr('id');
+								animateElems('off',relation);
+								return false;
+							})
+							.delegate('a',eventOn,function(e){
+								var relation	= $(this).attr('id');
+								animateElems('on',relation);
+								return false;
+							});	
+						},
+
+						animateElems		= function(dir,relation) {
+							var $e	= $elems;
+							
+							switch(dir){
+								case 'on'	:
+
+									if(relation)
+										$e	= $elems.not('.'+relation);
+									
+									$e.each(function(){
+										var $el		= $(this),
+											color	= $el.data('original-color'),
+											param	= {};
+										
+										if($el.hasClass('e-color'))
+											param.color		= color;
+										if($el.hasClass('e-fade'))
+											param.opacity	= 1;
+
+										$el.stop().animate(param,speed);	
+									});
+									
+									break;
+								case 'off'	:
+									if(relation)
+										$e	= $elems.not('.'+relation);
+									
+									$e.each(function(){
+										var $el		= $(this),
+											param	= {};
+										
+										if($el.hasClass('e-color'))
+											param.color		= colorOff;
+										if($el.hasClass('e-fade'))
+											param.opacity	= 0.1;
+
+										$el.stop().animate(param,speed);	
+									});
+									
+									break;
+							}
+						};
+						
+					return {
+						init				: init
+					};
+				})();
+
+			OverlayEffect.init();
+			});
+        </script>
+    </body>
+</html>

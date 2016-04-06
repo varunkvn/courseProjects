@@ -1,0 +1,223 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Name that Tune</title>
+<link rel="icon" type="image/png" href="images/playthattune.ico">
+<link href="styles.css" rel="stylesheet" type="text/css" />
+
+<style>
+body {
+	font-family: "Trebuchet MS", "Helvetica", "Arial",  "Verdana", "sans-serif";
+	font-size: 62.5%;
+	
+}
+.fix-img{ width:100px; height:100px;}
+
+      .tab {
+            display:none;
+        }
+ 
+        .tab.active {
+            display:block;
+        }
+
+
+
+#tabs-1, #tabs-2, #tabs-3{background:#002146; border-radius:4px; padding:15px 30px;}
+#main-menu{background:none; overflow:hidden;}
+.play_box ul li a:hover{cursor:pointer;}
+.play_box ul li.active a{ background: none repeat scroll 0 0 #002146;
+    
+    margin: 0 5px 0 0;
+    padding: 0 16px;}
+	.play_box ul li a { background:#003D66; padding: 0 16px; margin:0 5px 0 0; border-radius: 4px 4px 0 0;}
+
+
+.play_box ul {
+    margin: 0 auto;
+    overflow: hidden;
+    width: 276px;
+}
+#tabs{ margin-top:30px;}
+
+
+
+
+
+</style>
+
+<!--<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">-->
+<link rel="stylesheet" href="jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+  
+ <script>
+ function callTab(tabid){
+	 
+	 if(tabid == '1'){
+		 document.getElementById('tab1').setAttribute("class", "active"); 
+		  document.getElementById('tab2').setAttribute("class", "");  
+		   document.getElementById('tab3').setAttribute("class", "");  
+		 
+		 document.getElementById('tabs-1').style.display = "block";	 
+		 document.getElementById('tabs-2').style.display = "none";
+		document.getElementById('tabs-3').style.display = "none";
+	 }
+	 
+	  if(tabid == '2'){
+		   document.getElementById('tab1').setAttribute("class", "");  
+		    document.getElementById('tab2').setAttribute("class", "active");  
+			 document.getElementById('tab3').setAttribute("class", "");  
+		 
+	 document.getElementById('tabs-1').style.display = "none";
+	 document.getElementById('tabs-2').style.display = "block";
+	document.getElementById('tabs-3').style.display = "none";
+	 }
+	 
+	  if(tabid == '3'){
+		  
+		   document.getElementById('tab1').setAttribute("class", "");  
+		    document.getElementById('tab2').setAttribute("class", "");  
+			 document.getElementById('tab3').setAttribute("class", "active");  
+		 
+	 document.getElementById('tabs-1').style.display = "none";
+	 document.getElementById('tabs-2').style.display = "none";
+	document.getElementById('tabs-3').style.display = "block";
+	 }
+	 
+	 
+ }
+ </script> 
+  
+
+
+   
+<script src="scriptaculous.js" type="text/javascript"></script>
+<script type="text/javascript" src="effects.js"></script>
+<script src="lightbox.js" type="text/javascript"></script>
+
+<script src="prototype.js" type="text/javascript"></script>
+<script src="scriptaculous.js" type="text/javascript"></script>
+<script type="text/javascript" src="effects.js"></script>
+<script src="lightbox.js" type="text/javascript"></script>
+ 
+ <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro|Open+Sans:300' rel='stylesheet' type='text/css'> 
+    <link rel="stylesheet" href="lightbox.css" type="text/css" media="screen,projection">
+
+
+</head>
+
+<body>
+
+	<div class="main play" >
+    
+    	<div class="startareaplay history-main-wrapper">
+            <h1>History</h1>
+            <div style="clear:both;"></div>
+           
+           <div class="play_box tune-hist-wrap" style="background:none;">
+           		
+             <div class="hist-tab-wrap" style="height: auto;">
+             
+           
+        	
+            <div id="tabs">
+               <div id="main-menu">
+              <ul>
+                <li class="active" id="tab1"><a onclick="callTab('1')">Facts</a></li>
+                <li  id="tab2"><a  onclick="callTab('2')">Video</a></li>
+                <li  id="tab3"><a  onclick="callTab('3')">Photos</a></li>
+              </ul>
+              </div>
+              
+  <div id="tabs-1"  style="padding-top:20px;">
+    
+  <div id="history-facts-title" > Top 10 Quick Facts about "Name That  Tune" </div>
+        
+        <div id="history-facts-content" > #10  –  The show debuted 61 years ago as one of the original game shows on  television.</div>
+        
+        <div id="history-facts-content" > #9  –  The original run of the series ran from 1952 through 1985. </div>
+        
+        <div id="history-facts-content" > #8  –   The series ran on CBS & NBC primetime for most of its initial run. </div>
+        
+        <div id="history-facts-content" > #7  –   The show has been a hit on television in the following territories: The  United Kingdom,  Germany,  Brazil, Italy,  Poland,  Russia,  Viet Nam, Australia,  Belgium, Canada, France, Indonesia, Morocco, Turkey, the Ukraine, Slovakia, Hungary, Spain, Portugal and the United States to name a few. </div>
+        
+        <div id="history-facts-content" > #6  –   In Poland, it airs seven days a week and is the equivalent of "Wheel of  Fortune." </div>
+        
+        <div id="history-facts-content" >#5  –   Kathie Lee Gifford, then known as Kathie Lee Johnson was discovered on "Name That Tune" as the La La Girl.  </div>
+        
+        <div id="history-facts-content" >#4  –   In the last two years, David Letterman, Hilary Swank, Good Morning   America, Conan O'Brien, The View, Ellen DeGeneres, Juliana Margulies, Jimmy   Fallon, The Today Show and about 500 radio stations have all played "Name  That Tune" publicly . </div>
+        
+        <div id="history-facts-content" >#3  –   The following games have all been rounds on "Name That Tune": Pick a  Tune, Cassette Roulette, Melody Roulette, Build a Tune, Money Tree, Pick a  Prize, Ring That Bell, Sing a Tune, Tune Countdown, Tune Topics, The Golden Medley, Tournament of Champions, Mystery Round, Mystery Guests, Decade Download, The Million Dollar Minute, and the famous Bid A Note amongst  others. </div>
+        
+        <div id="history-facts-content" > #2  –   "Name That Tune" was bought by Les Moonves six years ago with Donny Osmond  
+        attached to host. A pilot was ordered but never produced after Donny left the show to do "The Great American Dream Vote." </div>
+        
+        <div id="history-facts-content" > #1  –  When polled, game show aficionados and fanatics will tell you that this is the #1 game they would like to see back on television. In England, 54% of their audience polled said the would watch "Name That Tune" if it was back on  television. </div>
+        
+        
+        
+        <div id="history-facts-content" >Bonus Bonus Bonus - Over 16 million people play "Song Pop" everyday online, (which is just "who can name the song title the fastest"). </div>  
+  
+    
+  </div>
+  <div id="tabs-2"  style=" display:none; padding-top:20px;">
+         
+        
+        <iframe style="margin: 10px !important; margin-left: 250px !important;     min-height: 200px !important;  width: 415px !important;" width="420" height="345" 
+        src="http://www.youtube.com/embed/Y3IfjwZRUCk">
+        </iframe>
+  </div>
+  <div id="tabs-3"   style=" display:none; padding-top:20px;">
+    
+   	<div class="pop-img-wrap">
+   <a href="slider/img/name1.jpg" rel="lightbox[food1]" > <img class="fix-img" src="slider/img/name1.jpg" alt="Food Picture 1"> </a>
+    
+<a href="slider/img/name2.jpg" rel="lightbox[food1]" > <img class="fix-img" src="slider/img/name2.jpg" alt="Food Picture 2"> </a>
+<a href="slider/img/name3.jpg" rel="lightbox[food1]" > <img class="fix-img" src="slider/img/name3.jpg" alt="Food Picture 1"> </a>
+    
+<a href="slider/img/name4.jpg" rel="lightbox[food1]" > <img class="fix-img" src="slider/img/name4.jpg" alt="Food Picture 2"> </a>
+
+    
+<a href="slider/img/name6.jpg" rel="lightbox[food1]" > <img class="fix-img" src="slider/img/name6.jpg" alt="Food Picture 2"> </a>
+<a href="slider/img/name7.jpg" rel="lightbox[food1]" > <img class="fix-img" src="slider/img/name7.jpg" alt="Food Picture 1"> </a>
+    
+</div>
+   
+<div id="overlay" style="display: none;"></div>
+
+<div id="lightbox" style="display: none;">
+  <div id="outerImageContainer" style="margin-top: 100px !important;">
+    <div id="imageContainer"><img id="lightboxImage">
+      <div id="hoverNav"><a id="prevLink" href="#"><img class="prev" src="images/prev-next.jpg"></a><a id="nextLink" href="#"><img class="next" src="images/prev-next.jpg"></a></div>
+      <div id="loading"><a id="loadingLink" href="#"><img src="./Suckerfish HoverLightbox Redux - Monday By Noon_files/loading.gif"></a></div>
+    </div>
+  </div>
+  <div id="imageDataContainer" class="clearfix">
+    <div id="imageData">
+      <div id="imageDetails"><span id="caption"></span><span id="numberDisplay"></span></div>
+      <div id="bottomNav"><a id="bottomNavClose"  href="javascript:void(0)" onclick="document.getElementById('lightbox').style.display='none';document.getElementById('overlay').style.display='none'"><img  width="25px" height="25px" src="slider/img/close.jpg"></a></div>
+
+    </div>
+  </div>
+</div>
+        
+  </div>
+   
+</div>
+            
+           
+           
+            
+            
+            </div>
+             
+       	  </div>
+            
+           
+          
+        
+        
+    
+   <?php include ('footer.php') ?>
