@@ -1,0 +1,102 @@
+package libraryinfsystem;
+
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+import com.borland.jbcl.layout.*;
+
+/**
+ * <p>Title: Library Information System</p>
+ * <p>Description: </p>
+ * <p>Copyright: Copyright (c) 2004</p>
+ * <p>Company: </p>
+ * @author James J. Wilcox
+ * @version 1.0
+ */
+
+public class Welcome_Screen extends JFrame {
+  JPanel contentPane;
+  XYLayout xYLayout1 = new XYLayout();
+  JLabel jLabel1 = new JLabel();
+  JLabel jLabel2 = new JLabel();
+  JButton jButton1 = new JButton();
+  JButton jButton2 = new JButton();
+
+  //Construct the frame
+  public Welcome_Screen() {
+    enableEvents(AWTEvent.WINDOW_EVENT_MASK);
+    try {
+      jbInit();
+    }
+    catch(Exception e) {
+      e.printStackTrace();
+    }
+  }
+  //Component initialization
+  private void jbInit() throws Exception  {
+    contentPane = (JPanel) this.getContentPane();
+    jLabel1.setFont(new java.awt.Font("Dialog", 1, 18));
+    jLabel1.setText("WELCOME TO L.I.S.");
+    contentPane.setLayout(xYLayout1);
+    this.setSize(new Dimension(400, 300));
+    this.setTitle("Frame Title");
+    jLabel2.setFont(new java.awt.Font("Dialog", 3, 11));
+    jLabel2.setOpaque(false);
+    jLabel2.setIconTextGap(4);
+    jLabel2.setText("LOGON AS ADMINISTRATOR OR STUDENT USER");
+    jButton1.setFont(new java.awt.Font("Dialog", 1, 11));
+    jButton1.setMnemonic('0');
+    jButton1.setText("ADMINISTRATOR");
+    jButton1.addActionListener(new Welcome_Screen_jButton1_actionAdapter(this));
+    jButton2.setFont(new java.awt.Font("Dialog", 1, 11));
+    jButton2.setSelected(false);
+    jButton2.setText("STUDENT USER");
+    jButton2.addActionListener(new Welcome_Screen_jButton2_actionAdapter(this));
+    contentPane.setBackground(UIManager.getColor("InternalFrame.inactiveTitleForeground"));
+    contentPane.add(jButton1,  new XYConstraints(37, 82, 326, -1));
+    contentPane.add(jLabel1, new XYConstraints(9, 11, -1, -1));
+    contentPane.add(jLabel2, new XYConstraints(56, 46, -1, -1));
+    contentPane.add(jButton2,  new XYConstraints(35, 152, 327, -1));
+  }
+  //Overridden so we can exit when window is closed
+  protected void processWindowEvent(WindowEvent e) {
+    super.processWindowEvent(e);
+    if (e.getID() == WindowEvent.WINDOW_CLOSING) {
+      System.exit(0);
+    }
+  }
+
+  void jButton2_actionPerformed(ActionEvent e) {
+  LogonStudentUser newWin=new LogonStudentUser();
+  newWin.setSize(400, 300);
+  newWin.setVisible(true);
+  }
+
+  void jButton1_actionPerformed(ActionEvent e) {
+  LogonAdministrator newWin=new LogonAdministrator();
+  newWin.setSize(400, 300);
+  newWin.setVisible(true);
+  }
+}
+
+class Welcome_Screen_jButton2_actionAdapter implements java.awt.event.ActionListener {
+  Welcome_Screen adaptee;
+
+  Welcome_Screen_jButton2_actionAdapter(Welcome_Screen adaptee) {
+    this.adaptee = adaptee;
+  }
+  public void actionPerformed(ActionEvent e) {
+    adaptee.jButton2_actionPerformed(e);
+  }
+}
+
+class Welcome_Screen_jButton1_actionAdapter implements java.awt.event.ActionListener {
+  Welcome_Screen adaptee;
+
+  Welcome_Screen_jButton1_actionAdapter(Welcome_Screen adaptee) {
+    this.adaptee = adaptee;
+  }
+  public void actionPerformed(ActionEvent e) {
+    adaptee.jButton1_actionPerformed(e);
+  }
+}

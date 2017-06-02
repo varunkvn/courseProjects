@@ -1,0 +1,901 @@
+
+import javax.swing.*;
+import java.awt.event.*;
+import java.awt.*;
+import javax.swing.border.LineBorder;
+import java.util.*;
+import java.text.*;
+import javax.swing.text.html.*;
+import javax.swing.JTree;
+import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.event.TreeSelectionListener;
+import javax.swing.event.TreeSelectionEvent;
+import javax.swing.tree.TreeSelectionModel;
+import javax.swing.UIManager;
+import javax.swing.tree.*;
+import java.io.*;
+import java.util.*;
+import java.awt.PrintJob.*;
+import java.net.*;
+//import com.oyoaha.swing.plaf.oyoaha.*;
+import amzi.ls.*;
+
+/**
+ This program has been solely programmed for an AI project and not meant for any business means.
+ If you intend to you the code please do so freely on condition you acknowledge us.
+ Created by Group 13 - CyberVision softwares.
+ The ODBC datasource name is AI please do not forget to set that before running then program.
+ Please do not hesitate to submit any bug to us.
+ you can mail us on dh002211@ex.apiit.edu.my
+
+ @author Asrar Ahmed Makrani
+ @version 1.4.0 build 3
+ */
+
+public class main extends JFrame implements TreeSelectionListener{
+
+	public JPanel logoPanel = new JPanel();
+	public JPanel linkPanel = new JPanel();
+	public JPanel infoPanel = new JPanel();
+	public JPanel basePanel = new JPanel();
+	public Icon logo = new ImageIcon("x.jpg");
+	public JLabel logoLabel = new JLabel(logo);
+	public JLabel wordings;
+	public JTree links;
+	public JTextArea info = new JTextArea(10,10);
+	public JScrollPane infoScroller = new JScrollPane(info);
+	public Container c = getContentPane();
+	public JMenuBar menuBar = new JMenuBar();
+	public JMenu file = new JMenu("File");
+	public JMenu help = new JMenu("Help");
+	public JMenuItem about = new JMenuItem("About us", new ImageIcon("about.gif"));
+	public JMenuItem exit = new JMenuItem("Exit", new ImageIcon("blank.gif"));
+	public JMenuItem helpMenu = new JMenuItem("Help", new ImageIcon("help.gif"));
+	public JMenu site = new JMenu("AHFI on the web");
+	public JMenuItem ahfiSite = new JMenuItem("AHFI site", new ImageIcon("world.gif"));
+	public JMenuItem ahfiFaq = new JMenuItem("Frequently Asked Questions", new ImageIcon("world.gif"));
+	public JMenuItem ahfiTs = new JMenuItem("Technical Support", new ImageIcon("world.gif"));
+	public JMenuItem ahfiFeed = new JMenuItem("Give us your Feedback", new ImageIcon("world.gif"));
+	public JMenuItem print = new JMenuItem("Print", new ImageIcon("print.gif"));
+	public String text;
+	public Date currentDate;
+	public SimpleDateFormat formatter;
+	public patients p = new patients();
+	public JScrollPane linkScroller;
+	public aboutUs ab = new aboutUs();
+	public JEditorPane editor = null;
+	public addRule addRules = new addRule();
+	public JScrollPane rule_scroller = new JScrollPane(addRules);
+	public risk_factors r_f = new risk_factors();
+	public LogicServer ls;
+	public int ctr = 0;
+	JScrollPane scroller = new JScrollPane();
+
+
+	public main()
+	{
+		super("Heart Disease Info Center");
+		this.setResizable(false);
+
+			try
+			{
+			  OyoahaLookAndFeel lnf = new OyoahaLookAndFeel();
+			UIManager.setLookAndFeel(lnf);
+			}
+			catch (Exception e)
+			{
+
+			}
+
+				//Quit this app when the big window closes.
+        addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e) {
+                System.exit(0);
+            }
+        });
+
+		setIconImage(getToolkit().getImage("heart.gif"));
+		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        int paintx = (screenSize.width);
+		int painty = (screenSize.height);
+		setBounds( (paintx - 610)/2 , ((painty-100) - 680)/2,
+						 610,680);
+
+		c.setLayout(null);
+		logoPanel.setLayout(null);
+		infoPanel.setLayout(null);
+		linkPanel.setLayout(null);
+
+		launch();
+
+		info.setLineWrap(true);
+
+		DefaultMutableTreeNode top = new DefaultMutableTreeNode("Links");
+        createNodes(top);
+        links = new JTree(top);
+        links.setOpaque(true);
+        links.setBackground(Color.gray);
+        linkScroller = new JScrollPane(links);
+
+        links.addTreeSelectionListener(this);
+
+		String dd;
+		formatter = new SimpleDateFormat ("MMMMMMMMM dd yyyy", Locale.getDefault());
+		currentDate = new java.util.Date();
+		dd = formatter.format(currentDate);
+
+		logoLabel.setBounds(0,0,200,200);
+		linkScroller.setBounds(0,0,180,400);
+		infoScroller.setBounds(0,0,400,600);
+
+		links.setBackground(Color.gray);
+		links.setForeground(Color.gray);
+
+		infoPanel.setBackground(Color.gray);
+
+		basePanel.setBackground(Color.gray);
+
+		file.setMnemonic(KeyEvent.VK_F);
+		print.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_P, ActionEvent.CTRL_MASK));
+		about.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_A, ActionEvent.CTRL_MASK));
+		about.setMnemonic(KeyEvent.VK_A);
+		exit.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F2, ActionEvent.CTRL_MASK));
+		exit.setMnemonic(KeyEvent.VK_X);
+
+		exit.addActionListener(new ActionListener()
+		{
+            public void actionPerformed(ActionEvent e)
+            {
+            	int confirm = JOptionPane.showConfirmDialog(null,
+				"Are you sure want to exit?",
+				"Exit Application",
+				JOptionPane.YES_NO_OPTION);
+
+ 				if( confirm == JOptionPane.YES_OPTION )
+ 				{
+ 					JOptionPane.showMessageDialog( null,
+ 					"Thanks for using our System");
+ 					dispose();
+ 					System.exit(0);
+ 				}
+            }
+        });
+
+		print.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+         	     //printRecord(makeRecord());
+            }
+        });
+		file.add(print);
+
+		file.add(about);
+		about.addActionListener(new ActionListener()
+		{
+            public void actionPerformed(ActionEvent e)
+            {
+            	infoPanel.removeAll();
+            	infoPanel.repaint();
+            	infoPanel.add(ab);
+				infoPanel.validate();
+
+            }
+        });
+
+		file.addSeparator();
+		file.add(exit);
+
+		help.setMnemonic(KeyEvent.VK_H);
+		helpMenu.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F1, ActionEvent.CTRL_MASK));
+		help.add(helpMenu);
+		help.addSeparator();
+		help.add(site);
+		helpMenu.addActionListener(new ActionListener()
+		{
+            public void actionPerformed(ActionEvent e)
+            {
+            	infoPanel.removeAll();
+            	infoPanel.repaint();
+            	launch();
+				infoPanel.validate();
+
+            }
+        });
+
+		site.add(ahfiSite);
+		site.add(ahfiFaq);
+		site.add(ahfiTs);
+		site.add(ahfiFeed);
+
+		menuBar.add(file);
+		menuBar.add(help);
+
+		setJMenuBar(menuBar);
+
+		logoPanel.add(logoLabel);
+		linkPanel.add(linkScroller);
+		//infoPanel.add(infoScroller);
+		wordings = new JLabel("Welcome to the Heart Disease info Center, Today is: " + dd);
+		basePanel.add(wordings);
+		basePanel.setBorder(new LineBorder(new Color(0, 0, 0), 2));
+
+		logoPanel.setBounds(0,0,200,200);
+		linkPanel.setBounds(0,200,200,400);
+		infoPanel.setBounds(200,0,400,600);
+		basePanel.setBounds(0,600,600,30);
+
+		c.add(logoPanel);
+		c.add(linkPanel);
+		c.add(infoPanel);
+		c.add(basePanel);
+	}
+
+
+	private void createNodes(DefaultMutableTreeNode top) {
+        DefaultMutableTreeNode category = null;
+        DefaultMutableTreeNode detail = null;
+
+
+        category = new DefaultMutableTreeNode("Patients");
+        top.add(category);
+
+        detail = new DefaultMutableTreeNode("Add");
+        category.add(detail);
+
+        detail = new DefaultMutableTreeNode("Delete");
+        category.add(detail);
+        detail = new DefaultMutableTreeNode("Update");
+        category.add(detail);
+        detail = new DefaultMutableTreeNode("Search");
+        category.add(detail);
+
+        category = new DefaultMutableTreeNode("Doctor");
+        top.add(category);
+
+        detail = new DefaultMutableTreeNode("Diagonise");
+        category.add(detail);
+        detail = new DefaultMutableTreeNode("Medical Info");
+        category.add(detail);
+        detail = new DefaultMutableTreeNode("Add New Rules");
+        category.add(detail);
+        detail = new DefaultMutableTreeNode("Hospitals");
+        category.add(detail);
+
+        category = new DefaultMutableTreeNode("Diseases");
+        top.add(category);
+
+        detail = new DefaultMutableTreeNode("Aortic Aneurysm");
+        category.add(detail);
+        detail = new DefaultMutableTreeNode("Angina");
+        category.add(detail);
+        detail = new DefaultMutableTreeNode("Congenital Heart Disease");
+        category.add(detail);
+
+        category = new DefaultMutableTreeNode("Know your Heart");
+        detail = new DefaultMutableTreeNode("Info on Heart");
+        category.add(detail);
+        detail = new DefaultMutableTreeNode("Calculate your angina risk factor");
+        category.add(detail);
+        top.add(category);
+
+        category = new DefaultMutableTreeNode("Contact us");
+        detail = new DefaultMutableTreeNode("Contact us");
+        category.add(detail);
+        top.add(category);
+
+    }
+
+    public void valueChanged(TreeSelectionEvent e)
+    {
+    	TreePath[] paths = links.getSelectionPaths();
+
+    	if(paths == null)
+    	return;
+
+    	for(int i = 0; i < paths.length; i++)
+    	{
+
+    			String s = (String)(((DefaultMutableTreeNode)(paths[i].getPathComponent(2))).getUserObject());
+
+    			if(s.equals("Add")||s.equals("Delete")||s.equals("Update")||s.equals("Search"))
+    			{
+    				infoPanel.removeAll();
+            		infoPanel.repaint();
+            		infoPanel.add(p);
+					infoPanel.validate();
+    			}else
+    			if(s.equals("Diagonise"))
+    			{
+    				runKnow();
+    			}else
+    			if(s.equals("Congenital Heart Disease"))
+    			{
+    				infoPanel.removeAll();
+            		infoPanel.repaint();
+            		launchCongestive();
+					infoPanel.validate();
+    			}else
+    			if(s.equals("Aortic Aneurysm"))
+    			{
+    				infoPanel.removeAll();
+            		infoPanel.repaint();
+            		launchAortic();
+					infoPanel.validate();
+    			}else
+    			if(s.equals("Angina"))
+    			{
+    				infoPanel.removeAll();
+            		infoPanel.repaint();
+            		launchAngina();
+					infoPanel.validate();
+    			}else
+    			if(s.equals("Add New Rules"))
+    			{
+    				infoPanel.removeAll();
+            		infoPanel.repaint();
+            		infoPanel.add(addRules);
+					infoPanel.validate();
+    			}else
+    			if(s.equals("Info on Heart"))
+    			{
+    				infoPanel.removeAll();
+            		infoPanel.repaint();
+            		launchHeart();
+					infoPanel.validate();
+    			}else
+    			if(s.equals("Calculate your angina risk factor"))
+    			{
+    				infoPanel.removeAll();
+            		infoPanel.repaint();
+            		infoPanel.add(r_f);
+					infoPanel.validate();
+    			}else
+    			if(s.equals("Contact us"))
+    			{
+    				infoPanel.removeAll();
+            		infoPanel.repaint();
+            		launchContact();
+					infoPanel.validate();
+    			}
+    	}
+    }
+
+    public String makeRecord()
+	{
+		String buffer;
+		buffer = text;
+		return buffer;
+	}
+
+    private void printRecord(String s)
+	{
+		StringReader sr = new StringReader(s);
+		LineNumberReader lnr = new LineNumberReader(sr);
+		Font typeface = new Font("Monospaced", Font.PLAIN, 12);
+		Properties p = new Properties();
+		PrintJob pjob = getToolkit().getPrintJob(this, "Print report", p);
+
+		if (pjob != null) {
+			Graphics pg = pjob.getGraphics();
+			if (pg != null) {
+				FontMetrics fm = pg.getFontMetrics(typeface);
+				int margin = 20;
+				int pageHeight = pjob.getPageDimension().height - margin;
+    			int fontHeight = fm.getHeight();
+    			int fontDescent = fm.getDescent();
+    			int curHeight = margin;
+
+				String nextLine;
+				pg.setFont (typeface);
+
+				try
+				{
+					do
+					{
+						nextLine = lnr.readLine();
+						if (nextLine != null) {
+							if ((curHeight + fontHeight) > pageHeight)
+							{ // New Page
+								pg.dispose();
+								pg = pjob.getGraphics();
+								curHeight = margin;
+							}
+
+							curHeight += fontHeight;
+
+							if (pg != null)
+							{
+								pg.setFont (typeface);
+								pg.drawString (nextLine, margin, curHeight - fontDescent);
+							}
+						}
+					}
+					while (nextLine != null);
+
+				}
+				catch (EOFException eof)
+				{
+				}
+				catch (Throwable t)
+				{
+					t.printStackTrace();
+				}
+			}
+			pg.dispose();
+		}
+		if (pjob != null)
+			pjob.end();
+	}
+
+	public static void main (String args[])
+	{
+		main m = new main();
+		m.setVisible(true);
+		m.show();
+
+	}
+
+	public void launch()
+	{
+		try
+		{
+			URL url = null;
+			try
+			{
+				url = getClass().getResource("index.html");
+            }
+            catch (Exception e)
+            {
+				System.err.println("Failed to open ");
+				url = null;
+            }
+
+	            if(url != null)
+	            {
+	                editor = new JEditorPane(url);
+	                editor.setEditable(false);
+	                JScrollPane scroller = new JScrollPane(editor);
+	                scroller.setBackground(Color.gray);
+	                editor.setBackground(Color.gray);
+	                scroller.setBounds(0,0,400,600);
+			        infoPanel.add(scroller);
+			     }
+
+		   }
+		   catch (MalformedURLException e)
+		   {
+		       System.out.println("Malformed URL: " + e);
+		   }
+		   catch (IOException e)
+		   {
+		       System.out.println("IOException: " + e);
+		   }
+
+		}
+		public void launchCongestive()
+		{
+		try
+		{
+			URL url = null;
+			try
+			{
+				url = getClass().getResource("Congenital heart disease.htm");
+            }
+            catch (Exception e)
+            {
+				System.err.println("Failed to open ");
+				url = null;
+            }
+
+	            if(url != null)
+	            {
+	                editor = new JEditorPane(url);
+	                editor.setEditable(false);
+	                JScrollPane scroller = new JScrollPane(editor);
+	                scroller.setBackground(Color.gray);
+	                editor.setBackground(Color.gray);
+	                scroller.setBounds(0,0,400,600);
+			        infoPanel.add(scroller);
+			     }
+
+		   }
+		   catch (MalformedURLException e)
+		   {
+		       System.out.println("Malformed URL: " + e);
+		   }
+		   catch (IOException e)
+		   {
+		       System.out.println("IOException: " + e);
+		   }
+		}
+
+		public void launchAortic()
+		{
+		try
+		{
+			URL url = null;
+			try
+			{
+				url = getClass().getResource("Aortic.htm");
+            }
+            catch (Exception e)
+            {
+				System.err.println("Failed to open ");
+				url = null;
+            }
+
+	            if(url != null)
+	            {
+	                editor = new JEditorPane(url);
+	                editor.setEditable(false);
+	                JScrollPane scroller = new JScrollPane(editor);
+	                scroller.setBackground(Color.gray);
+	                editor.setBackground(Color.gray);
+	                scroller.setBounds(0,0,400,600);
+			        infoPanel.add(scroller);
+			     }
+
+		   }
+		   catch (MalformedURLException e)
+		   {
+		       System.out.println("Malformed URL: " + e);
+		   }
+		   catch (IOException e)
+		   {
+		       System.out.println("IOException: " + e);
+		   }
+		}
+
+		public void launchAngina()
+		{
+		try
+		{
+			URL url = null;
+			try
+			{
+				url = getClass().getResource("Angina.html");
+            }
+            catch (Exception e)
+            {
+				System.err.println("Failed to open ");
+				url = null;
+            }
+
+	            if(url != null)
+	            {
+	                editor = new JEditorPane(url);
+	                editor.setEditable(false);
+	                JScrollPane scroller = new JScrollPane(editor);
+	                scroller.setBackground(Color.gray);
+	                editor.setBackground(Color.gray);
+	                scroller.setBounds(0,0,400,600);
+			        infoPanel.add(scroller);
+			     }
+
+		   }
+		   catch (MalformedURLException e)
+		   {
+		       System.out.println("Malformed URL: " + e);
+		   }
+		   catch (IOException e)
+		   {
+		       System.out.println("IOException: " + e);
+		   }
+		}
+
+		public void launchHeart()
+		{
+		try
+		{
+			URL url = null;
+			try
+			{
+				url = getClass().getResource("heart.htm");
+            }
+            catch (Exception e)
+            {
+				System.err.println("Failed to open ");
+				url = null;
+            }
+
+	            if(url != null)
+	            {
+	                editor = new JEditorPane(url);
+	                editor.setEditable(false);
+	                JScrollPane scroller = new JScrollPane(editor);
+	                scroller.setBackground(Color.gray);
+	                editor.setBackground(Color.gray);
+	                scroller.setBounds(0,0,400,600);
+			        infoPanel.add(scroller);
+			     }
+
+		   }
+		   catch (MalformedURLException e)
+		   {
+		       System.out.println("Malformed URL: " + e);
+		   }
+		   catch (IOException e)
+		   {
+		       System.out.println("IOException: " + e);
+		   }
+		}
+
+		public void launchContact()
+		{
+		try
+		{
+			URL url = null;
+			try
+			{
+				url = getClass().getResource("contact.htm");
+            }
+            catch (Exception e)
+            {
+				System.err.println("Failed to open ");
+				url = null;
+            }
+
+	            if(url != null)
+	            {
+	                editor = new JEditorPane(url);
+	                editor.setEditable(false);
+	                JScrollPane scroller = new JScrollPane(editor);
+	                scroller.setBackground(Color.gray);
+	                editor.setBackground(Color.gray);
+	                scroller.setBounds(0,0,400,600);
+			        infoPanel.add(scroller);
+			     }
+
+		   }
+		   catch (MalformedURLException e)
+		   {
+		       System.out.println("Malformed URL: " + e);
+		   }
+		   catch (IOException e)
+		   {
+		       System.out.println("IOException: " + e);
+		   }
+		}
+
+void runKnow()
+   {
+      long solveTerm, actionTerm, responseTerm, term;
+      String id = "none", responseFunctor, responseType, solutions = "", s;
+      boolean more = true, oneAnswer;
+
+      try
+      {
+         // Initialize a new Logic Server
+         ls = new LogicServer();
+         ls.Init("");
+
+         // Load ODBC (optional, you can take this out if you don't use it)
+         // Alternatively you could call ls.InitLSX() which will load any
+         // LSXs specified in amzi.cfg
+         ls.AddLSX("aodbc", 0);
+
+         // Load the Jig
+         ls.Load("basic.xpl");
+
+         // Initialize the runtime with directory and logfile
+         // Prior to starting a new KWI session the session id must be 0.
+         String path = System.getProperty("user.dir") + System.getProperty("file.separator");
+         id = "0";
+
+         // The directory is where the kb file is located
+         // The session_directory is where a temporary file is created to maintain the state
+         //   of the reasoning process
+         // The log_file is a log of the reasoning process and is created in the directory
+         // The message level is the level of detail in the log_file
+         s = "kwi(" + id + ", initialize([directory = $" + Utils.doubleSlashes(path) + "$, " +
+                    "session_directory = $" + Utils.doubleSlashes(path) + "$, " +
+                    "log_file = $kwrun.log$, message_level = high]), _INFO)";
+         term = ls.ExecStr(s);
+         if (term == 0)
+            JOptionPane.showMessageDialog(null, "kwi / initialize failed",
+               "Error", JOptionPane.ERROR_MESSAGE);
+
+         // Get the name, version and build (optional)
+         Properties sysInfo = Utils.prologListToProperties(ls, ls.GetArg(term, 3), 5000);
+         String engineName = sysInfo.getProperty("system");
+         String version = sysInfo.getProperty("version");
+         //outputText.setText("System: " + engineName + " Version: " + version);
+
+         // Open the logicbase
+         //String name = JOptionPane.showInputDialog("Enter name of knowledgebase to open:");
+         String name = "aiheart.kb";
+         if (name.length() == 0) return;
+         s = "kwi(" + id + ", open($" + name + "$), _)";
+         System.out.println(s);
+         term = ls.ExecStr(s);//error is here..............................................
+         System.out.println("now");
+         if (term == 0)
+            JOptionPane.showMessageDialog(null, "kwi / open " + name + " failed",
+               "Error", JOptionPane.ERROR_MESSAGE);
+
+         // Start a new session
+         // Now the id can be anything but 0
+         id = "session_0";
+         if (ls.ExecStr("kwi('" + id + "', new_session, _)") == 0 )
+            JOptionPane.showMessageDialog(null, "kwi / new_session failed",
+               "Error", JOptionPane.ERROR_MESSAGE);
+
+         // Keep calling kwi / solve until there is nothing else to do
+         while((solveTerm = ls.ExecStr("kwi('" + id + "', solve, _MORE)")) != 0)
+         {
+            // Check if we're done
+            if (!ls.GetStrArg(solveTerm, 3).equals("more"))
+               more = false;
+
+            // Process all the actions. Actions are either questions to
+            // ask the user or information to tell the user.
+            do
+            {
+               // Get the action
+               if ((actionTerm = ls.ExecStr("kwi('" + id + "', get_action, _ACTION)")) == 0)
+               {
+                  JOptionPane.showMessageDialog(null, "kwi / get_action",
+                     "Error", JOptionPane.ERROR_MESSAGE);
+                     return;
+               }
+
+               // The third parameter in the kwi call contains the type and
+               // parameters of the action to be performed
+               // Use the Amzi! Logic Server to retrieve the action
+               responseTerm = ls.GetArg(actionTerm, 3);
+               responseFunctor = ls.GetFunctor(responseTerm);
+               responseType = ls.GetStrArg(responseTerm, 1);
+
+               // Display the HTML question page (we ignore this...used by the web interface)
+               if (responseFunctor.equals("ask") && responseType.equals("html"))
+               {
+                  // Do nothing
+               }
+
+               // Get a fact from the user
+               if (responseFunctor.equals("ask") && responseType.equals("user"))
+               {
+                  String factName, prompt, questionType, defaultValue, answerType, delimiter;
+                  int length;
+                  Vector menu;
+
+                  // The name of the fact we are seeking a value for
+                  factName = ls.GetStrArg(responseTerm, 2);
+
+                  // Get all the slots from the question object into a Properties object
+                  Properties question = Utils.prologListToProperties(ls, ls.GetArg(responseTerm, 3), 5000);
+
+                  // Get the prompt
+                  prompt = question.getProperty("prompt");
+
+                  // Get the question type
+                  questionType = question.getProperty("question_type");
+
+                  // Handle fill in the blank separate from menu choices
+                  if (questionType.equals("fill_in_the_blank"))
+                  {
+                     // Get the field length
+                     length = new Integer((String)question.getProperty("length")).intValue();
+
+                     // Get the default value
+                     defaultValue = question.getProperty("default");
+
+                     // Ask the user
+                     AskFieldDialog ask = new AskFieldDialog(this, "Question: " + factName, prompt, defaultValue, length);
+                     Point loc = this.getContentPane().getLocationOnScreen();
+                     ask.setLocation(loc.x, loc.y);
+                     ask.setModal(true);
+                     ask.show();
+
+                     // See if the user wants to stop
+                     if (ask.getValue().length() == 0) return;
+
+                     // Assert the new fact value using the KWI
+                     answerType = question.getProperty("answer_type");
+
+                     // Text values have $'s around them, atoms have 's, everything else has nothing
+                     if (answerType.equals("text")) delimiter = "$";
+                     else if(answerType.equals("atom")) delimiter = "'";
+                     else delimiter = "";
+
+                     if (ls.ExecStr("kwi('" + id + "', assert(fact('" + factName + "', " + delimiter + ask.getValue() + delimiter + ")), _)") == 0)
+                        JOptionPane.showMessageDialog(null, "kwi / assert failed",
+                          "Error", JOptionPane.ERROR_MESSAGE);
+                  }
+                  // Menu single and multiple choice
+                  else
+                  {
+                     // Get all the menu choices into a vector
+                     // Note this code will not work if you have a separate display string
+                     menu = Utils.prologListToVector(ls, ls.StrToTerm(question.getProperty("choices")), 5000);
+                     if (question.getProperty("question_type").equals("menu_multiple_choices"))
+                        oneAnswer = false;
+                     else
+                        oneAnswer = true;
+
+                     // Ask the user
+                     AskMenuDialog ask = new AskMenuDialog(this, "Fact: " + factName, prompt, menu, oneAnswer);
+                     Point loc = this.getContentPane().getLocationOnScreen();
+                     ask.setLocation(loc.x, loc.y);
+                     ask.setModal(true);
+                     ask.show();
+
+                     // See if the user wants to stop
+                     if (ask.getSelectedValue() == null) return;
+
+                     // Assert the new fact or facts (for multiple choices)
+                     if (oneAnswer)
+                        s = "kwi('" + id + "', assert(fact('" + factName + "', $" + ask.getSelectedValue() + "$)), _)";
+
+                     // Multiple answers need to be asserted as a prolog list which is enclosed in []'s
+                     else
+                     {
+                        // Build the list from the vector returned from AskMenuDialog
+                        Vector facts = ask.getSelectedValues();
+                        String factList = "";
+                        for (int i = 0 ; i < facts.size() ; i++)
+                           factList = factList + "$" + facts.elementAt(i) + "$,";
+                        s = "kwi('" + id + "', assert(fact('" + factName + "', [" + factList.substring(0,factList.length()-1) + "])), _)";
+                     }
+                     if (ls.ExecStr(s) == 0)
+                        JOptionPane.showMessageDialog(null, "kwi / assert",
+                           "Error", JOptionPane.ERROR_MESSAGE);
+                  }
+               }
+
+               // Display an answer
+               if (responseFunctor.equals("tell") && responseType.equals("user"))
+               {
+                  // Get the type of the answer
+                  String answerType = ls.GetStrArg(responseTerm, 1);
+
+                  // Get all the slots in the answer into a Properties object
+                  Properties answer = Utils.prologListToProperties(ls, ls.GetArg(responseTerm, 2), 100000);
+
+                  // Get the name of the answer
+                  String answerName = answer.getProperty("goal");
+
+                  // Add new answer onto existing ones
+                  String newSolution = answer.getProperty("text");
+                  if (newSolution != null)
+                  {
+                     solutions = solutions + "<P>" + answerName + ": " + newSolution + "</P>";
+                     JEditorPane output = new JEditorPane();
+                     output.setBackground(Color.gray);
+                     output.setContentType("text/html");
+				     output.getEditorKit().createDefaultDocument();
+				     output.setEditable(false);
+                     output.setText(solutions);
+                     scroller.getViewport().add(output, null);
+                     scroller.setBounds(0,0,400,600);
+                     infoPanel.removeAll();
+            		infoPanel.repaint();
+            		infoPanel.add(scroller);
+					infoPanel.validate();
+//
+                  }
+                  else
+                     JOptionPane.showMessageDialog(null, "No text for goal: " + answerName,
+                        "Error", JOptionPane.ERROR_MESSAGE);
+               }
+
+            }
+            while (!responseFunctor.equals("none"));
+
+            if (!more)  break;
+
+         } // while solveTerm
+
+         ls.Close();
+      }
+      catch (LSException ex)
+      {
+		System.out.println(ex+"'" + id + "'");
+	//         displayKBError(ex, "'" + id + "'");
+      }
+
+   }
+
+
+}
+
+

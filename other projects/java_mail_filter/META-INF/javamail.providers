@@ -1,0 +1,3 @@
+protocol=mbox; type=store; class=gnu.mail.providers.mbox.MboxStore; vendor=dog@gnu.org;
+protocol=nntp; type=store; class=gnu.mail.providers.nntp.NNTPStore; vendor=dog@gnu.org;
+protocol=nntp-post; type=transport; class=gnu.mail.providers.nntp.NNTPTransport; vendor=dog@gnu.org;

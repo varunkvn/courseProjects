@@ -1,0 +1,5 @@
+00001;Business Data Communication and Netwoking;John Wiley & Sons, USA;7;2001;109.0;R
+00002;Faculty of Business Communication Skills Handbook;USQ Toowoomba, Qld;4;2001;10.0;P
+00003;Java Programming Comprehensive;ISBN 0-7600-1070-6;6;1999;59.9;R
+00004;Java 2: The Complete Reference;Tata McGraw-Hill;4;2001;99.9;P
+00005;The Basic Practice Of Statstics;W.H. Freeman and Company;4;1996;59.9;R

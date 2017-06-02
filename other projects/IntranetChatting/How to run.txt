@@ -1,0 +1,8 @@
+ensure normal path and classpath settings for jdk 1.4 or higher only 
+to run
+
+1.compile all the source files
+
+2.java OrbitServer to run the server 
+
+3.java Orbit to run the client

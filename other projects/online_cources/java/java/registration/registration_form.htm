@@ -1,0 +1,189 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Registration Form</title>
+<script language="Javascript">
+<!--
+	var chkval=""
+
+   	function chk_select(t, msg) {
+		if (t.selectedIndex != 0) return true;
+       		alert(msg);
+		t.focus();
+		return false;
+	}
+		
+	function chk_text(t, msg) {
+		if (t.value != '') return true;
+		alert(msg);
+		t.focus();
+		return false;
+	}
+	
+	function chk_text2(t, msg) {
+		if ((t.value != '') && (t.value==document.frmreg.password.value)) return true;
+		alert(msg);
+		t.focus();
+		return false;
+	}
+	
+	function chk_text_email(t, msg) {
+      		if (t.value != '') {
+        		var at = t.value.indexOf('@', 0);
+        		if (at > 1 && t.value.lastIndexOf('.') > at) {
+           			return true;
+        		}
+       		}
+       		alert(msg);
+       		t.focus();
+       		t.select();
+       		return false;
+   	}
+   	
+   	function check(frm) {
+		if (chk_text(frm.fname, 'Please enter your First Name.') &&
+			chk_text(frm.lname, 'Please enter your Last Name.') &&
+			chk_text_email(frm.email, 'Please enter a valid Email Address.') &&
+			chk_select(frm.country, 'Please select your Region.') &&
+			chk_select(frm.age, 'Please select your Age.') &&
+			chk_text(frm.loginID, 'Please enter your LoginID.') &&
+			chk_text(frm.password, 'Please enter your password.') &&
+			chk_text2(frm.repassword, 'Please re-enter exactly the password above.')) frm.submit();
+		
+	}
+//-->
+</script>
+<link rel="stylesheet" type="text/css" href="../css/stylesheets.css">
+</head>
+
+<body topmargin="10" leftmargin="20" background="../images/GENERIC.gif">
+
+<table border="0" width="540" cellspacing="5" cellpadding="5">
+  <tr>
+    <td width="100%"><font face="Arial,helvetica,verdana,geneva" size="2"><b>Fill out the information below.
+      <font color="#FF0000">*</font> <font color="#0000FF">= Required</font></b></font>
+      <hr>
+    </td>
+  </tr>
+  <tr>
+    <td width="100%">
+      <form name="frmreg" method="POST" action="AddStudent.asp" onsubmit="check(this); return false;">
+        <div align="center">
+          <center>
+          <table border="0" width="90%" cellspacing="1" cellpadding="2">
+            <tr>
+              <td width="38%" align="right"><font face="Arial,helvetica,verdana,geneva" size="2"><b><font color="#FF0000">*
+                </font>First Name:</b></font></td>
+              <td width="62%"><input type="text" name="fname" size="20"></td>
+            </tr>
+            <tr>
+              <td width="38%" align="right"><b><font color="#FF0000" face="Arial,helvetica,verdana,geneva" size="2">*
+                </font><font face="Arial,helvetica,verdana,geneva" size="2">Last
+                Name:</font></b></td>
+              <td width="62%"><input type="text" name="lname" size="25"></td>
+            </tr>
+            <tr>
+              <td width="38%" align="right"><b><font color="#FF0000" face="Arial,helvetica,verdana,geneva" size="2">*
+                </font><font face="Arial,helvetica,verdana,geneva" size="2">Primary
+                Email Address:</font></b></td>
+              <td width="62%"><input type="text" name="email" size="25"></td>
+            </tr>
+            <tr>
+              <td width="38%" align="right"><font face="Arial,helvetica,verdana,geneva" size="2"><b>Your
+                Title:</b></font></td>
+              <td width="62%"><input type="text" name="title" size="10"></td>
+            </tr>
+            <tr>
+              <td width="38%" align="right"><font face="Arial,helvetica,verdana,geneva" size="2"><b>School/Organisation:</b></font></td>
+              <td width="62%"><input type="text" name="school" size="30"></td>
+            </tr>
+            <tr>
+              <td width="38%" align="right"><font face="Arial,helvetica,verdana,geneva" size="2"><b>Street
+                Address:</b></font></td>
+              <td width="62%"><input type="text" name="address" size="30"></td>
+            </tr>
+            <tr>
+              <td width="38%" align="right"><font face="Arial,helvetica,verdana,geneva" size="2"><b>City:</b></font></td>
+              <td width="62%"><input type="text" name="city" size="20"></td>
+            </tr>
+            <tr>
+              <td width="38%" align="right"><b><font color="#FF0000" face="Arial,helvetica,verdana,geneva" size="2">*
+                </font></b><font face="Arial,helvetica,verdana,geneva" size="2"><b>Region:</b></font></td>
+              <td width="62%"><select name="country" size="1">
+<option>-- Select One --</option>
+<option value="Port Louis" >Port Louis</option>
+<option value="Moka" >Moka</option>
+<option value="Flacq" >Flacq</option>
+<option value="Rivière du Rempart" >Rivière du Rempart</option>
+<option value="Pamplemousses" >Pamplemousses</option>
+<option value="Black River" >Black River</option>
+<option value="Plaines Willems" >Plaines Willems</option>
+<option value="Grand Port" >Grand Port</option>
+<option value="Savanne" >Savanne</option>
+<option value="Rodrigues" >Rodrigues</option>
+</select></td>
+            </tr>
+            <tr>
+              <td width="38%" align="right"><font face="Arial,helvetica,verdana,geneva" size="2"><b>Phone:</b></font></td>
+              <td width="62%"><input type="text" name="phone" size="20"></td>
+            </tr>
+            <tr>
+              <td width="38%" align="right"><b><font color="#FF0000" face="Arial,helvetica,verdana,geneva" size="2">*
+                </font><font face="Arial,helvetica,verdana,geneva" size="2">Age:</font></b></td>
+              <td width="62%"><select size="1" name="age">
+                  <option>Pick one!</option>
+                  <option value="Under 12 years">Under 12 years</option>
+                  <option value="12">12</option>
+                  <option value="13">13</option>
+                  <option value="14">14</option>
+                  <option value="15">15</option>
+                  <option value="16">16</option>
+                  <option value="17">17</option>
+                  <option value="19">19</option>
+                </select></td>
+            </tr>
+            <tr>
+              <td width="38%" align="right"><b><font face="Arial,helvetica,verdana,geneva" size="2">Gender:</font></b></td>
+              <td width="62%"><input type="radio" value="Male" name="gender"> <font face="Arial,helvetica,verdana,geneva" size="2">Male</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="radio" value="Female" name="gender"> <font face="Arial,helvetica,verdana,geneva" size="2">Female</font></td>
+            </tr>
+            <tr>
+              <td width="38%" align="right"><b><font color="#FF0000" face="Arial,helvetica,verdana,geneva" size="2">*
+                </font><font face="Arial,helvetica,verdana,geneva" size="2">Please
+                enter a login ID:</font></b></td>
+              <td width="62%"><input type="text" name="loginID" size="20"></td>
+            </tr>
+            <tr>
+              <td width="38%" align="right"><b><font color="#FF0000" face="Arial,helvetica,verdana,geneva" size="2">*
+                </font><font face="Arial,helvetica,verdana,geneva" size="2">Choose
+                a password:</font></b></td>
+              <td width="62%"><input type="password" name="password" size="20"></td>
+            </tr>
+            <tr>
+              <td width="38%" align="right"><b><font color="#FF0000" face="Arial,helvetica,verdana,geneva" size="2">*
+                </font><font face="Arial,helvetica,verdana,geneva" size="2">Re-enter
+                password:</font></b></td>
+              <td width="62%"><input type="password" name="repassword" size="20"></td>
+            </tr>
+            <tr>
+              <td width="38%" align="right"></td>
+              <td width="62%"></td>
+            </tr>
+            <tr>
+              <td width="100%" align="right" colspan="2">
+                <p align="center"><font face="Arial,helvetica,verdana,geneva" size="2"><b><input type="submit" value="Sign Me Up!" name="Submit"></b></font></td>
+            </tr>
+          </table>
+          </center>
+        </div>
+      </form>
+    </td>
+  </tr>
+</table>
+
+</body>
+
+</html>

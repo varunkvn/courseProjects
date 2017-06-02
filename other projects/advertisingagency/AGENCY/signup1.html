@@ -1,0 +1,79 @@
+<html>
+<!--<head>
+<script language="JavaScript">
+function addcookie()
+{
+var firstname=document.f1.first_name.value
+var lastname=document.f1.last_name.value
+var email=document.f1.e_mail.value
+var address1=document.f1.address.value
+document.cookie="firstname="+firstname
+document.cookie="lastname="+lastname
+document.cookie="email="+email
+document.cookie="address1="+address1
+document.f1.submit()
+}
+</script>
+</head>-->
+<body   background="backgrd.gif">
+<form name="f1" action="http://localhost:8080/servlet/sign_up" method=get">
+<h2><center>SIGN UP</center></h2>
+<pre>
+First name	 : 	<input type=text name=first_name >
+
+Middle name:	        <input type=text name=middle_name >    
+
+Last Name :	        <input type=text name=last_name >
+
+Age:	       		<input type=text name=age size=5>			
+
+ Date Of Birth&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DD<select size="1" name="day">
+                   <script language="JavaScript">
+                          for(i=1;i<=31;i++)
+                          {       document.writeln("<option>"+i+"</option>");}
+                   </script>
+                           
+  </select>
+   MM<select size="1" name="month">
+   <option value="1">jan</option>
+   <option value="2">feb</option>
+   <option value="3">mar</option>
+   <option value="4">apr</option>
+   <option value="5">may</option>
+   <option value="6">jun</option>
+   <option value="7">jul</option>
+   <option value="8">aug</option>
+   <option value="9">sep</option>
+   <option value="10">oct</option>
+   <option value="11">nov</option>
+   <option value="12">dec</option>
+  </select>YY</b>
+ 
+  <select size="1" name="year">
+  <script language="JavaScript">
+  for(i=1910;i<=2001;i++)
+   { document.writeln("<option>"+i+"</option>");}
+  </script>
+  </select></font>
+
+Address   		<textarea name=address rows=3 cols=15></textarea>
+
+Phone no   		<input type=text name=phoneno>
+
+E-mail   		<input type=text name=e_mail>
+
+Occupation 		<input type=text name=occupation>
+
+Income per month    	<input type=text name=income_per_month>
+
+User Name		<input type=text name=user_name>
+
+Password		<input type=password name=password>
+
+Re-type password	<input type=password name=retype_password>
+
+<input type=submit value=submit>   <input type=reset value=Cancel>  <input type=button value=Cancel>  
+</pre>
+</form>
+</body>
+</html>

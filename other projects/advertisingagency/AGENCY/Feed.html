@@ -1,0 +1,21 @@
+<html>
+<head>
+<script language="JavaScript">
+function add()
+{
+var i=location.search
+var j=i.indexOf("?")
+var k=i.indexOf("&")
+var l=i.substring(j+11,k)
+var m=i.substring(k+10,i.length)
+document.writeln("Thank you for choosing our site"+l+"."+m);
+}
+</script>
+</head>
+<body bground="Backgrd.gif" onLoad="add()">
+<form name=f1>
+<a href="login.html">Login</a><br>
+<a href="signup1.html">Signup</a><br>
+</form>
+</body>
+</html>

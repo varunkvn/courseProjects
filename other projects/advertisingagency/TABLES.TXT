@@ -1,0 +1,58 @@
+1)  create table user_applications(
+APPLNO                                                 NUMBER(5) PRIMARY KEY,
+PNAME                                                          VARCHAR2(15),
+TYPE                                                           VARCHAR2(10),
+IMAGES                                                         VARCHAR2(20),
+RECEIPT_DATE                                                   DATE,
+MESSAGE                                                        CLOB,
+RECEIPTNO                                                      VARCHAR2(25));
+
+(2).create table sign_up(
+FIRST_NAME                                                     VARCHAR2(25),
+MIDDLE_NAME                                                  VARCHAR2(25),
+LAST_NAME                                                       VARCHAR2(25),
+AGE                                                                    NUMBER(3),
+DOB                                                                    DATE,
+PHONE_NO                                                        NUMBER(10),
+E_MAIL                                                               VARCHAR2(25),
+OCCUPATION                                                     VARCHAR2(25),
+INCOME_PER_MONTH                                               NUMBER(10),
+USER_NAME                                                      VARCHAR2(25) primary key,
+PASSWORD                                                       VARCHAR2(25),
+RETYPE_PASSWORD                                                VARCHAR2(25),
+ADDRESS                                                        VARCHAR2(30));
+
+
+
+(3)create table maintypes1(
+ NAME                                                           VARCHAR2(10)
+ TYPE_ID                                                         VARCHAR2(5));
+
+(4)create table subtypes1(
+ SUBTYPEID                                                      VARCHAR2(25)
+ SUBTYPE                                                        VARCHAR2(25)
+ APPLNO                                                         NUMBER(5)
+ TYPEID                                                         VARCHAR2(25));
+
+(5)create table netcharges(
+ SUBTYPEID                                                      VARCHAR2(15)
+ CHARGES                                                        NUMBER(20)
+ TYPEID                                                         VARCHAR2(6));
+
+(6)create table trials(
+ APPLNO                                                         NUMBER(5)
+ TRIALNO                                                        NUMBER(2));
+
+(7)create table submit(
+SUBMISSIONID                                                   VARCHAR2(25)
+PROJECT_ID                                                     VARCHAR2(10)
+SUBMITTEDPARTY                                                 VARCHAR2(20)
+PAIDAMOUNT                                                     NUMBER(9,2)
+PAIDRECPT                                                      VARCHAR2(6));
+
+(8) create table feedback(
+firstname varchar2(10),lastname varchar2(10),email varchar2(20),
+ sexgroup varchar2(1),address varchar2(20),state varchar2(10),pincode number(10),
+ city varchar2(10),country varchar2(10),occupation varchar2(10),msg varchar2(20));
+
+(9).create table advt_users(user_name varchar2(25) primary key,password varchar2(25));

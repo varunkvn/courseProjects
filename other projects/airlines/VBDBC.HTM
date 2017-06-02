@@ -1,0 +1,47 @@
+<HTML>
+<HEAD>
+<META name=VI60_defaultClientScript content=VBScript>
+<META NAME="GENERATOR" Content="Microsoft Visual Studio 6.0">
+<TITLE></TITLE>
+<SCRIPT LANGUAGE=vbscript>
+<!--
+dim con,rs
+set con=CreateObject("adodb.connection")
+set rs=CreateObject("adodb.recordset") 
+con.open "DSN","psrini","ssi"
+sub dname_onFocus
+dim x
+x=window.document.srinivas.deptno.value     
+'alert(x)
+ rs.open "select * from dept where deptno=" & x,con
+'//deptno.value=rs(0)
+window.document.srinivas.dname.value=rs(1)
+window.document.srinivas.loc.value=rs(2)
+end sub
+ 'sub command2_onclick
+ 'if not rs.EOF then
+ 'rs.MoveNext
+ 'else
+ 'rs.MoveLast
+ 'end if
+'deptno.value=rs(0)
+'dname.value=rs(1)
+'loc.value=rs(2)
+'end sub
+ 
+-->
+</SCRIPT>
+
+</HEAD>
+<BODY>
+<form name=srinivas>
+<legend>uiCustomer Identification</legend>
+<br>
+<P><INPUT name=deptno></P>
+<P><INPUT name=dname></P>
+<P><INPUT name=loc></P>
+<P><INPUT type=button name=command1 value=Display>&nbsp;
+<INPUT type=button name=command2 value=Next></P>
+</form>
+</BODY>
+</HTML>

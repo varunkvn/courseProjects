@@ -1,0 +1,20 @@
+THINGS TO BE DONE
+-----------------
+For WIN2000 OS
+----------------
+
+Similar procedure for any other OS too.
+
+1) Goto the Control Panel.
+	->In that Goto Administrative Tools.
+	->In that choose Data Sources(ODBC).
+
+2) Inside Data Sources(ODBC ).
+	->Click Add Button.
+	 ->In that select MICROSOFT ACCESS DRIVER(*.mdb).
+	   ->In ODBC Microsoft Access setup Dialog Box.
+              ->Set Data Source Name: Medi (Exact Name).
+	      ->Click Select Button to Slect DataBase. 	
+	      ->Select the DataBase: MediDB.mdb.	
+	      ->press Ok to Configure the DataBase.
+Thus the ODBC Configuration is over.		

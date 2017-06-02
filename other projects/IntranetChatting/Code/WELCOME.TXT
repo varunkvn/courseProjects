@@ -1,0 +1,1 @@
+This new version of Intranet Chatting uses a completely new communications protocol, and you should find that it uses far less network bandwidth, and drawing will be much faster and smoother. 

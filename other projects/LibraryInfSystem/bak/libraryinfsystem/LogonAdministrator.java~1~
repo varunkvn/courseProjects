@@ -1,0 +1,56 @@
+package libraryinfsystem;
+
+import javax.swing.*;
+import java.awt.*;
+import com.borland.jbcl.layout.*;
+
+/**
+ * <p>Title: Library Information System</p>
+ * <p>Description: </p>
+ * <p>Copyright: Copyright (c) 2004</p>
+ * <p>Company: </p>
+ * @author James J. Wilcox
+ * @version 1.0
+ */
+
+public class LogonAdministrator extends JFrame {
+  XYLayout xYLayout1 = new XYLayout();
+  JLabel jLabel1 = new JLabel();
+  JLabel jLabel2 = new JLabel();
+  JLabel jLabel3 = new JLabel();
+  JTextField jTextField1 = new JTextField();
+  JPasswordField jPasswordField1 = new JPasswordField();
+  JButton jButton1 = new JButton();
+
+  public LogonAdministrator() {
+    try {
+      jbInit();
+    }
+    catch(Exception e) {
+      e.printStackTrace();
+    }
+  }
+  private void jbInit() throws Exception {
+    jLabel1.setFont(new java.awt.Font("Dialog", 1, 11));
+    jLabel1.setMaximumSize(new Dimension(97, 15));
+    jLabel1.setText("ADMINISTRATOR LOGON");
+    this.getContentPane().setLayout(xYLayout1);
+    jLabel2.setFont(new java.awt.Font("Dialog", 1, 11));
+    jLabel2.setText("USERNAME");
+    jLabel3.setFont(new java.awt.Font("Dialog", 1, 11));
+    jLabel3.setOpaque(false);
+    jLabel3.setText("PASSWORD");
+    jPasswordField1.setText("");
+    jTextField1.setText("");
+    jButton1.setFont(new java.awt.Font("Dialog", 1, 11));
+    jButton1.setRolloverEnabled(false);
+    jButton1.setSelected(false);
+    jButton1.setText("LOGIN");
+    this.getContentPane().add(jLabel2, new XYConstraints(45, 92, -1, -1));
+    this.getContentPane().add(jLabel3, new XYConstraints(41, 133, -1, -1));
+    this.getContentPane().add(jTextField1,    new XYConstraints(133, 87, 187, -1));
+    this.getContentPane().add(jPasswordField1,    new XYConstraints(132, 134, 186, -1));
+    this.getContentPane().add(jLabel1, new XYConstraints(173, 29, -1, -1));
+    this.getContentPane().add(jButton1, new XYConstraints(188, 204, -1, -1));
+  }
+}

@@ -1,0 +1,22 @@
+Reading message file
+Waiting for connections
+New user arun logging on at Mar 12, 2005 10:59 AM from 127.0.0.1
+There are 1 users connected
+New user srikanth logging on at Mar 12, 2005 11:20 AM from 127.0.0.1
+There are 2 users connected
+New user raj logging on at Mar 12, 2005 11:22 AM from 127.0.0.1
+There are 3 users connected
+User raj disconnected at Mar 12, 2005 11:30 AM
+There are 2 users connected
+User raj disconnected at Mar 12, 2005 11:30 AM
+There are 2 users connected
+User srikanth disconnected at Mar 12, 2005 11:30 AM
+There are 1 users connected
+User arun disconnected at Mar 12, 2005 11:30 AM
+There are 0 users connected
+Server shutting down...
+No users connected
+Peak connections this session: 3
+Total connections this session: 3
+Saving user messages
+Closing log file

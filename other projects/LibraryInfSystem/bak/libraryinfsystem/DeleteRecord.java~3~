@@ -1,0 +1,155 @@
+package libraryinfsystem;
+
+import javax.swing.*;
+import java.awt.*;
+import com.borland.jbcl.layout.*;
+import java.awt.event.*;
+
+/**
+ * <p>Title: Library Information System</p>
+ * <p>Description: </p>
+ * <p>Copyright: Copyright (c) 2004</p>
+ * <p>Company: </p>
+ * @author James J. Wilcox
+ * @version 1.0
+ */
+
+public class DeleteRecord extends JFrame {
+  XYLayout xYLayout1 = new XYLayout();
+  JLabel jLabel1 = new JLabel();
+  JLabel jLabel2 = new JLabel();
+  JLabel jLabel3 = new JLabel();
+  JLabel jLabel4 = new JLabel();
+  JLabel jLabel5 = new JLabel();
+  JButton jButton1 = new JButton();
+  JTextField jTextField1 = new JTextField();
+  JTextField jTextField2 = new JTextField();
+  JTextField jTextField3 = new JTextField();
+  JTextField jTextField4 = new JTextField();
+
+  public DeleteRecord() {
+    try {
+      jbInit();
+    }
+    catch(Exception e) {
+      e.printStackTrace();
+    }
+  }
+  private void jbInit() throws Exception {
+    jLabel1.setFont(new java.awt.Font("Dialog", 1, 11));
+    jLabel1.setRequestFocusEnabled(true);
+    jLabel1.setText("RECORD DELETION");
+    this.getContentPane().setLayout(xYLayout1);
+    jLabel2.setFont(new java.awt.Font("Dialog", 1, 11));
+    jLabel2.setIconTextGap(4);
+    jLabel2.setText("TITLE OF BOOK");
+    jLabel3.setFont(new java.awt.Font("Dialog", 1, 11));
+    jLabel3.setText("AUTHOR OF BOOK");
+    jLabel4.setFont(new java.awt.Font("Dialog", 1, 11));
+    jLabel4.setText("ISBN NUMBER");
+    jLabel5.setFont(new java.awt.Font("Dialog", 1, 11));
+    jLabel5.setOpaque(false);
+    jLabel5.setText("PUBLISHER");
+    jButton1.setFont(new java.awt.Font("Dialog", 1, 11));
+    jButton1.setText("DELETE RECORD");
+    jButton1.addActionListener(new DeleteRecord_jButton1_actionAdapter(this));
+    jTextField1.setPreferredSize(new Dimension(6, 21));
+    jTextField1.setText("");
+    jTextField1.addActionListener(new DeleteRecord_jTextField1_actionAdapter(this));
+    jTextField2.setText("");
+    jTextField2.addActionListener(new DeleteRecord_jTextField2_actionAdapter(this));
+    jTextField3.setText("");
+    jTextField3.addActionListener(new DeleteRecord_jTextField3_actionAdapter(this));
+    jTextField4.setOpaque(true);
+    jTextField4.setText("");
+    jTextField4.addActionListener(new DeleteRecord_jTextField4_actionAdapter(this));
+    this.getContentPane().add(jTextField1, new XYConstraints(117, 69, 221, -1));
+    this.getContentPane().add(jLabel3, new XYConstraints(7, 116, -1, -1));
+    this.getContentPane().add(jLabel2, new XYConstraints(6, 69, -1, 14));
+    this.getContentPane().add(jTextField2, new XYConstraints(118, 113, 224, -1));
+    this.getContentPane().add(jTextField3, new XYConstraints(117, 164, 228, -1));
+    this.getContentPane().add(jLabel4, new XYConstraints(5, 166, -1, -1));
+    this.getContentPane().add(jTextField4, new XYConstraints(118, 209, 220, -1));
+    this.getContentPane().add(jLabel5, new XYConstraints(15, 211, -1, -1));
+    this.getContentPane().add(jLabel1, new XYConstraints(165, 22, -1, -1));
+    this.getContentPane().add(jButton1, new XYConstraints(161, 254, -1, -1));
+  }
+
+  void jTextField1_actionPerformed(ActionEvent e) {
+    System.out.println(jTextField1.getText());
+  }
+
+  void jTextField2_actionPerformed(ActionEvent e) {
+    System.out.println(jTextField2.getText());
+  }
+
+  void jTextField3_actionPerformed(ActionEvent e) {
+    System.out.println(jTextField3.getText());
+  }
+
+  void jTextField4_actionPerformed(ActionEvent e) {
+    System.out.println(jTextField4.getText());
+  }
+
+  void jButton1_actionPerformed(ActionEvent e) {
+    System.out.println(jTextField1.getText());
+    System.out.println(jTextField2.getText());
+    System.out.println(jTextField3.getText());
+    System.out.println(jTextField4.getText());
+  }
+}
+
+class DeleteRecord_jTextField1_actionAdapter implements java.awt.event.ActionListener {
+  DeleteRecord adaptee;
+
+  DeleteRecord_jTextField1_actionAdapter(DeleteRecord adaptee) {
+    this.adaptee = adaptee;
+  }
+  public void actionPerformed(ActionEvent e) {
+    adaptee.jTextField1_actionPerformed(e);
+  }
+}
+
+class DeleteRecord_jTextField2_actionAdapter implements java.awt.event.ActionListener {
+  DeleteRecord adaptee;
+
+  DeleteRecord_jTextField2_actionAdapter(DeleteRecord adaptee) {
+    this.adaptee = adaptee;
+  }
+  public void actionPerformed(ActionEvent e) {
+    adaptee.jTextField2_actionPerformed(e);
+  }
+}
+
+class DeleteRecord_jTextField3_actionAdapter implements java.awt.event.ActionListener {
+  DeleteRecord adaptee;
+
+  DeleteRecord_jTextField3_actionAdapter(DeleteRecord adaptee) {
+    this.adaptee = adaptee;
+  }
+  public void actionPerformed(ActionEvent e) {
+    adaptee.jTextField3_actionPerformed(e);
+  }
+}
+
+class DeleteRecord_jTextField4_actionAdapter implements java.awt.event.ActionListener {
+  DeleteRecord adaptee;
+
+  DeleteRecord_jTextField4_actionAdapter(DeleteRecord adaptee) {
+    this.adaptee = adaptee;
+  }
+  public void actionPerformed(ActionEvent e) {
+    adaptee.jTextField4_actionPerformed(e);
+  }
+}
+
+class DeleteRecord_jButton1_actionAdapter implements java.awt.event.ActionListener {
+  DeleteRecord adaptee;
+
+  DeleteRecord_jButton1_actionAdapter(DeleteRecord adaptee) {
+    this.adaptee = adaptee;
+  }
+  public void actionPerformed(ActionEvent e) {
+    adaptee.jButton1_actionPerformed(e);
+  }
+}

@@ -1,0 +1,44 @@
+All the servlet files are stored in agency folder.  If you will run
+agency.bat file from your present directory the servlet class
+files will be copy in c:\javawebserver2.0\servlets. If you will
+                             ---------------------------------
+run agenapplet.bat file applet class files will be copy in c:\javawebserver2.0\classes.
+-----------------------
+In (1).application.java(servlet)  file application is there.  In that application 
+     ----------------        
+number and party name will generate automatically by signup.html and login.html(action=LoginCheck.java(servlet)) files.  In application.java the html embeding
+------------            ---------------                            ----------------
+code is there.   In (1) form action will invoke (2).subtypes.java(servlet) file.
+                                                                    --------------
+
+ In (2) we will insert values into user_applications(tablename) except date,receptno
+                                              -------------------------------
+ subtypes1(applno,typeid) (tablename) maintypes1(tablename).  
+----------------------------     ^^^^^^  ------------        
+In (2)form action will invoke    (3)subtypeid.java.(servlet)
+                                              -------------------   
+
+      In (3) we will update subtypes1(table) with subtype selecting from the (2).
+                                     -------------------
+(3) form action will invoke   (4)trials.java(servlet)
+                                         -----------------------
+      In(4) we will insert values into  netcharges(typeid,subtypeid)(table) and in
+                                                    --------------------------------------   
+ subtypes1(subtypeid)(table)  . (4) form action will invoke (5)trialapp.java  
+ ------------------------------                           -------------------------------
+                       
+      In (5) it will invoke projapp6.java(applet file).If you satisfied with that trial press
+                                  ---------------------------    
+"YES" or "NO"  .   If you press "NO" it will Invoke another trial page in (6).trials1.java(servlet)
+-------------------------
+If you press "YES" it will invoke (7).billapp.java(servlet).  The button "YES" will 
+                                                        -----------------
+establish Applet-->Servlet communication  with (8).projserv.java(servlet)
+                                                                     ---------------------------   
+
+  In(8) we will insert the values in the trials(table). 
+                                                       -------------
+ NOTE:    [Here we have to remember one thing.  Whenever an applet started automatically
+it establishes applet servlet communication with (9).projserv1(servlet) for getting 
+                                                                      -----------------------        
+message stored in user_applications(table).  This applet-servlet communication is different from the applet-servlet commnication in "YES" button.]        

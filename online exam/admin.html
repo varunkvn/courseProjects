@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Online Examination</title>
+<link rel="stylesheet" href="styles.css" type="text/css" />
+</head>
+<body>
+<div id="wrap">
+	
+	<div id="header">
+		<div id="innerheader">
+			<div id="title">
+				<h1>ONLINE EXAM</h1>
+				<h2>A nEw WaY To LeArN</h2>
+			</div>
+		</div>
+	</div>
+<div id="content">
+		<div id="page">
+		<div class="innerpage">
+
+
+
+<script language ="javascript">
+var uname,pwd;
+submitOK="true";
+function f1()
+{
+uname=test.username.value;
+pwd=test.password.value;
+if(uname=="admin" && pwd=="admin")
+{
+submitOK="true";
+}
+else
+{
+alert("username and password are not correct");
+ submitOK="false";
+}
+if (submitOK=="false")
+ {
+ return false;
+ }
+}
+</script>
+<body bgcolor="green">
+<form name="test" action="admin1.html" onsubmit="return f1()">
+<div align="center">
+<h2 align="center"><font color="blue">WELCOME</font></h2><br>
+<h3>Give the username and password to login as adminisrator.,.</h3>
+<b>USERNAME:</b><input type="text" name="username"><br><br>
+<b>PASSWORD:</b><input type="password" name="password"><br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="submit" onClick="f1()" value="submit">
+<input type="reset" value="cancel">
+</form>
+</div>
+
+
+				</div>
+		</div>
+		<div id="sidebar">
+			<ul>
+				<li><a href="" class="selected">EXAM</a></li>
+				<li><a href="index.html">HOME</a></li>
+				
+			</ul>
+		</div>
+		<div class="clear"></div>
+	</div>
+	
+	<div id="footer">
+		<p>&copy; 2009. varun site.com. Design: <a href="http://www.orkut.com">varun</a> | <a href="http://www.facebook.com">varun again</a></p>
+	</div>
+</div>
+
+</body>
+</html>
+
+
+	

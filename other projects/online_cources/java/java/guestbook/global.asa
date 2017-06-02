@@ -1,0 +1,8 @@
+<OBJECT RUNAT=Server SCOPE=Session ID=MyInfo PROGID="MSWC.MyInfo">
+</OBJECT>
+<OBJECT  RUNAT=Server SCOPE=Application ID=Counter PROGID="MSWC.Counters">
+</OBJECT>
+<OBJECT RUNAT=Server SCOPE=Session ID=Tools PROGID="MSWC.Tools">
+</OBJECT>
+<OBJECT RUNAT=Server SCOPE=Application ID=Status PROGID="MSWC.Status">
+</OBJECT>

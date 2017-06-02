@@ -1,0 +1,261 @@
+<html>
+
+<SCRIPT LANGUAGE="Javascript">
+
+function newCookie(name,value,expiredays) {
+		d = new Date();
+		d.setDate(d.getDate()+expiredays);
+	    document.cookie = name + "=" + value +";expires="+d.toGMTString()+";"
+     }
+
+     function getCookie(name) {
+       var cookieFound = false;
+       var start = 0;
+       var end = 0;
+       var cookieString = document.cookie;
+
+       var i = 0;
+
+       // SCAN THE COOKIE FOR name
+       while (i <= cookieString.length) {
+          
+         start = i;
+         end = start + name.length;
+         if (cookieString.substring(start,end) == name) {
+           cookieFound = true;
+           break;
+         }
+         i++;
+       }
+
+       // IS name FOUND?
+       if (cookieFound) {
+         start = end + 1;
+         end = document.cookie.indexOf(";",start); 
+         if (end < start)
+           end = document.cookie.length; 
+         return document.cookie.substring(start,end); 
+       }
+       return "";
+     }
+
+
+ 
+
+function results(q)
+{
+    username=getCookie('username');
+
+    res=getCookie(username+'q'+q);
+
+
+    if (res=='1')
+	{
+		return 'Correct';
+	}
+	
+    if (res=='0')
+    {
+        return 'Incorrect';
+    }
+    return 'Not Attempted';
+}
+
+function value(s)
+{
+	if (s == "")
+	{
+		return 0;
+	}
+
+	return eval(s);
+}
+
+function total()
+{
+	temp = 0;
+	username=getCookie('username');
+
+    temp = temp + value(getCookie(username+'q01'));
+    temp = temp + value(getCookie(username+'q2'));
+    temp = temp + value(getCookie(username+'q3'));
+    temp = temp + value(getCookie(username+'q4'));
+    temp = temp + value(getCookie(username+'q5'));
+    temp = temp + value(getCookie(username+'q6'));
+    temp = temp + value(getCookie(username+'q7'));
+    temp = temp + value(getCookie(username+'q8'));
+    temp = temp + value(getCookie(username+'q9'));
+    temp = temp + value(getCookie(username+'q10'));
+    temp = temp + value(getCookie(username+'q11'));
+    temp = temp + value(getCookie(username+'q12'));
+    temp = temp + value(getCookie(username+'q13'));
+    temp = temp + value(getCookie(username+'q14'));
+    temp = temp + value(getCookie(username+'q15'));
+    return temp;
+}
+
+
+ 
+
+
+</sCRIPT>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFCC">
+<table width="74%" border="1" align="left" cellpadding="2" cellspacing="0">
+  <tr bgcolor="#CCCCFF"> 
+    <td colspan="2"><b> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp    YOUR  RESULTS ARE:
+      <SCRIPT> username= getCookie('username');document.write(username);</SCRIPT>
+      </b> </td>
+  </tr>
+  <tr> 
+    <td width="58%">Question 1</td>
+    <td width="42%"> 
+      <div align="center"> 
+        <SCRIPT>document.write(results('01'));</SCRIPT>
+        &nbsp;</div>
+    </td>
+  </tr>
+  <tr> 
+    <td width="58%">Question 2</td>
+    <td width="42%"> 
+      <div align="center"> 
+        <SCRIPT>document.write(results('2'));</SCRIPT>
+        &nbsp;</div>
+    </td>
+  </tr>
+  <tr> 
+    <td width="58%">Question 3</td>
+    <td width="42%"> 
+      <div align="center"> 
+        <SCRIPT>document.write(results('3'));</SCRIPT>
+        &nbsp;</div>
+    </td>
+  </tr>
+  <tr> 
+    <td width="58%">Question 4</td>
+    <td width="42%"> 
+      <div align="center"> 
+        <SCRIPT>document.write(results('4'));</SCRIPT>
+        &nbsp;</div>
+    </td>
+  </tr>
+  <tr> 
+    <td width="58%">Question 5</td>
+    <td width="42%"> 
+      <div align="center"> 
+        <SCRIPT>document.write(results('5'));</SCRIPT>
+        &nbsp;</div>
+    </td>
+  </tr>
+  <tr> 
+    <td width="58%">Question 6</td>
+    <td width="42%"> 
+      <div align="center"> 
+        <SCRIPT>document.write(results('6'));</SCRIPT>
+        &nbsp;</div>
+    </td>
+  </tr>
+  <tr> 
+    <td width="58%">Question 7</td>
+    <td width="42%"> 
+      <div align="center"> 
+        <SCRIPT>document.write(results('7'));</SCRIPT>
+        &nbsp;</div>
+    </td>
+  </tr>
+  <tr> 
+    <td width="58%">Question 8</td>
+    <td width="42%"> 
+      <div align="center"> 
+        <SCRIPT>document.write(results('8'));</SCRIPT>
+        &nbsp;</div>
+    </td>
+  </tr>
+  <tr> 
+    <td width="58%">Question 9</td>
+    <td width="42%"> 
+      <div align="center"> 
+        <SCRIPT>document.write(results('9'));</SCRIPT>
+        &nbsp;</div>
+    </td>
+  </tr>
+
+  <tr> 
+    <td width="58%" height="26">Question 10</td>
+    <td width="42%" height="26"> 
+      <div align="center"> 
+        <SCRIPT>document.write(results('10'));</SCRIPT>
+        &nbsp;</div>
+    </td>
+  </tr>
+  <tr> 
+    <td width="58%">Question 11</td>
+    <td width="42%"> 
+      <div align="center"> 
+        <script>document.write(results('11'));</script>
+      </div>
+    </td>
+  </tr>
+  <tr> 
+    <td width="58%">Question 12</td>
+    <td width="42%"> 
+      <div align="center"> 
+        <script>document.write(results('12'));</script>
+      </div>
+    </td>
+  </tr>
+ 
+ <tr> 
+    <td width="58%">Question 13</td>
+    <td width="42%"> 
+      <div align="center"> 
+        <script>document.write(results('13'));</script>
+      </div>
+    </td>
+  </tr>
+  <tr> 
+    <td width="58%">Question 14</td>
+    <td width="42%"> 
+      <div align="center"> 
+        <script>document.write(results('14'));</script>
+      </div>
+    </td>
+  </tr>
+
+  <tr> 
+    <td width="58%">Question 15</td>
+    <td width="42%"> 
+      <div align="center"> 
+        <script>document.write(results('15'));</script>
+      </div>
+    </td>
+  </tr>
+ 
+  <tr> 
+    <td width="58%"><b>TOTAL CORRECT ANSWERS&nbsp;</b></td>
+    <td width="42%"> 
+      <div align="center"> <font color="#FF3333"> <b> 
+        <SCRIPT>document.write(total());</SCRIPT>
+        &nbsp;</b></font></div>
+    </td>
+  </tr>
+  <tr>
+    <td width="58%" bgcolor="#CCCCFF"><font color="#FF3333"><b><a href="front%20page.htm" target="_parent" onMouseOver="exit.src='exiton.gif';" onMouseOut="exit.src='exit.gif';"><img name="exit" src="exit.gif" width="114" height="46" border="0"></a> 
+      </b></font></td>
+    <td width="42%">&nbsp;</td>
+  </tr>
+</table>
+<BR>
+<p>&nbsp;</p>
+</body>
+</html>
+
+
+
+     
+  
+  

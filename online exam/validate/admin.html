@@ -1,0 +1,28 @@
+<html>
+<head><title>UNIVERSITY ADMISSion SYSTEM</title></head>
+<script language ="javascript">
+var uname,pwd;
+function f1()
+{
+uname=test.username.value;
+pwd=test.password.value;
+if(uname=="admin" && pwd=="admin")
+document.writeln("LOGGEDIN SUCCESSFULLY");
+else
+alert("username and password are not correct");
+}
+</script>
+<body>
+<form name="test" action="admin1.html">
+USERNAME:<input type="text" name="username"><br>
+PASSWORD:<input type="password" name="password"><br>
+<input type="submit" onClick="f1()" value="submit">
+<input type="reset" value="cancel">
+</form>
+</body>
+</html>
+
+
+
+
+

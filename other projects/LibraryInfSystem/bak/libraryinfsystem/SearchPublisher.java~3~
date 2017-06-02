@@ -1,0 +1,82 @@
+package libraryinfsystem;
+
+import javax.swing.*;
+import java.awt.*;
+import com.borland.jbcl.layout.*;
+import java.awt.event.*;
+
+/**
+ * <p>Title: Library Information System</p>
+ * <p>Description: </p>
+ * <p>Copyright: Copyright (c) 2004</p>
+ * <p>Company: </p>
+ * @author James J. Wilcox
+ * @version 1.0
+ */
+
+public class SearchPublisher extends JFrame {
+  XYLayout xYLayout1 = new XYLayout();
+  JLabel jLabel1 = new JLabel();
+  JLabel jLabel2 = new JLabel();
+  JButton jButton1 = new JButton();
+  JTextField jTextField1 = new JTextField();
+
+  public SearchPublisher() {
+    try {
+      jbInit();
+    }
+    catch(Exception e) {
+      e.printStackTrace();
+    }
+  }
+  private void jbInit() throws Exception {
+    jLabel1.setFont(new java.awt.Font("Dialog", 1, 18));
+    jLabel1.setText("PUBLISHER SEARCH");
+    this.getContentPane().setLayout(xYLayout1);
+    jLabel2.setFont(new java.awt.Font("Dialog", 3, 11));
+    jLabel2.setMaximumSize(new Dimension(55, 15));
+    jLabel2.setText("PUBLISHER");
+    jButton1.setFont(new java.awt.Font("Dialog", 1, 11));
+    jButton1.setMnemonic('0');
+    jButton1.setText("SEARCH");
+    jButton1.addActionListener(new SearchPublisher_jButton1_actionAdapter(this));
+    jTextField1.setText("");
+    jTextField1.setScrollOffset(0);
+    jTextField1.addActionListener(new SearchPublisher_jTextField1_actionAdapter(this));
+    this.getContentPane().setBackground(UIManager.getColor("InternalFrame.inactiveTitleBackground"));
+    this.getContentPane().add(jLabel1, new XYConstraints(176, 31, -1, -1));
+    this.getContentPane().add(jLabel2,  new XYConstraints(51, 100, -1, -1));
+    this.getContentPane().add(jTextField1,     new XYConstraints(125, 101, 234, -1));
+    this.getContentPane().add(jButton1, new XYConstraints(196, 170, -1, -1));
+  }
+
+  void jTextField1_actionPerformed(ActionEvent e) {
+
+  }
+
+  void jButton1_actionPerformed(ActionEvent e) {
+    System.out.println(jTextField1.getText());
+  }
+}
+
+class SearchPublisher_jTextField1_actionAdapter implements java.awt.event.ActionListener {
+  SearchPublisher adaptee;
+
+  SearchPublisher_jTextField1_actionAdapter(SearchPublisher adaptee) {
+    this.adaptee = adaptee;
+  }
+  public void actionPerformed(ActionEvent e) {
+    adaptee.jTextField1_actionPerformed(e);
+  }
+}
+
+class SearchPublisher_jButton1_actionAdapter implements java.awt.event.ActionListener {
+  SearchPublisher adaptee;
+
+  SearchPublisher_jButton1_actionAdapter(SearchPublisher adaptee) {
+    this.adaptee = adaptee;
+  }
+  public void actionPerformed(ActionEvent e) {
+    adaptee.jButton1_actionPerformed(e);
+  }
+}

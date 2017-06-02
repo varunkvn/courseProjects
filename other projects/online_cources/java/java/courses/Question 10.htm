@@ -1,0 +1,107 @@
+<html>
+<HEAD>
+
+<SCRIPT LANGUAGE="Javascript">
+
+function newCookie(name,value,expiredays) {
+	d = new Date();
+	d.setDate(d.getDate() + expiredays);
+
+       document.cookie = name + "=" + value +"; expires="+ d.toGMTString()+";"
+ 
+     }
+
+     function getCookie(name) {
+       var cookieFound = false;
+       var start = 0;
+       var end = 0;
+       var cookieString = document.cookie;
+
+       var i = 0;
+
+       // SCAN THE COOKIE FOR name
+       while (i <= cookieString.length) {
+         start = i;
+         end = start + name.length;
+         if (cookieString.substring(start,end) == name) {
+           cookieFound = true;
+           break;
+         }
+         i++;
+       }
+
+       // IS name FOUND?
+       if (cookieFound) {
+         start = end + 1;
+         end = document.cookie.indexOf(";",start); 
+         if (end < start)
+           end = document.cookie.length; 
+         return document.cookie.substring(start,end); 
+       }
+       return "";
+     }
+ 
+function validate(ans,correct)
+{
+  user=getCookie('username'); 
+  if (ans==correct)
+  {	
+	 newCookie(user+'q10',1,360);
+  }
+  else
+  {
+	newCookie(user+'q10',0,360);
+  }
+}
+
+function validate()
+{
+  if (document.myform.myanswer.value=='C')
+   {
+     alert('Correct Answer');
+   }
+  else
+   {
+     alert('Incorrect');
+   }
+}
+</SCRIPT>
+<title></title>
+</HEAD>
+<BODY LINK="#0000FF" BACKGROUND="../images/GENERIC.gif" topmargin="10" leftmargin="20">
+
+<p><b>Section A</b></p>
+<hr>
+<p><b> Question 10</b></p>
+<br>
+Which of the following men helped in the development of computers? 
+<form name="myform">
+<input type="radio" name="answer" onClick="myanswer.value='A';">
+  Pythagoras<br>
+<input type="radio" name="answer" onClick="myanswer.value='B';">
+  Rousseau<br>
+<input type="radio" name="answer" onClick="myanswer.value='C';">
+  Babbage<br>
+<input type="radio" name="answer" onClick="myanswer.value='D';">
+  Erasmus<br>
+<!--  <input type="hidden" name="myanswer">   -->
+  <br>
+  <table width="94%" border="0">
+    <tr> 
+      <td width="29%"> 
+        <div align="left"><a href="Question%209.htm">&lt;Prev</a></div>
+      </td>
+      <td width="40%"> 
+        <div align="center"> 
+          <input type="text" name="myanswer">
+          <input type="button" value="push me" onClick="validate()"> 
+        </div>
+      </td>
+      <td width="31%"> 
+        <div align="right"><a href="Question%2011.htm">Next></a></div>
+      </td>
+    </tr>
+  </table>
+  </form>
+</body>
+</html>

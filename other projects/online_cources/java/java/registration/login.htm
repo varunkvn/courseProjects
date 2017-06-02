@@ -1,0 +1,78 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Login Page</title>
+<script language="Javascript">
+<!--
+	function chk_text(t, msg) {
+		if (t.value != '') return true;
+		alert(msg);
+		t.focus();
+		return false;
+	}
+   	
+   	function check(frm) {
+		if (chk_text(frm.login, 'Please enter your login ID.') &&
+			chk_text(frm.password, 'Please enter your Password')) frm.submit();
+	}
+   
+//-->
+</script>
+<link rel="stylesheet" type="text/css" href="../css/stylesheets.css">
+<base target="_self">
+</head>
+
+<body topmargin="10" leftmargin="20" background="../images/GENERIC.gif">
+
+<p align="center"><!--Banner*Show Begin-->
+
+<p align="center">
+<!-- URL's used in the movie-->
+<A HREF=../courses/Question 1.htm></A> <!-- text used in the movie-->
+<OBJECT classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+ codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0"
+ WIDTH=400 HEIGHT=40>
+ <PARAM NAME=movie VALUE="../banners/banners.swf"> <PARAM NAME=loop VALUE=True> <PARAM NAME=menu VALUE=false> <PARAM NAME=quality VALUE=high> <PARAM NAME=bgcolor VALUE=#FFFFFF> <EMBED src="../banners/banners.swf" loop=false menu=false quality=high bgcolor=#FFFFFF  WIDTH=400 HEIGHT=40 TYPE="application/x-shockwave-flash" PLUGINSPAGE="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash"></EMBED>
+</OBJECT>
+</p>
+<!--Banner*Show End-->
+
+<table border="0" width="540" cellspacing="5" cellpadding="5" bgcolor="#33CCFF">
+  <tr>
+    <td width="100%" bgcolor="#FFFFFF">
+      <form method="POST" action="../courses/courses.asp" onsubmit="check(this); return false;">
+        <p><font face="Arial,helvetica,verdana,geneva" size="2"><img border="0" src="../images/login.gif" width="150" height="23"><br>
+        If you have an account, please log in below.</font></p>
+        <div align="center">
+          <center>
+          <table border="0" width="60%" cellspacing="1" cellpadding="3" bgcolor="#808080">
+            <tr>
+              <td width="19%" bgcolor="#999999"><font face="Arial,helvetica,verdana,geneva" size="2"><b>Login
+                ID:</b></font></td>
+              <td width="81%" bgcolor="#C0C0C0"><font face="Arial,helvetica,verdana,geneva" size="2"><input type="text" name="login" size="20"></font></td>
+            </tr>
+            <tr>
+              <td width="19%" bgcolor="#999999"><font face="Arial,helvetica,verdana,geneva" size="2"><b>Password:</b></font></td>
+              <td width="81%" bgcolor="#C0C0C0"><font face="Arial,helvetica,verdana,geneva" size="2"><input type="password" name="password" size="20"></font></td>
+            </tr>
+            <tr>
+              <td width="100%" colspan="2" bgcolor="#999999">
+                <p align="center"><font face="Arial,helvetica,verdana,geneva" size="2"><b><input type="submit" value="Log In" name="Submit"></b></font></td>
+            </tr>
+          </table>
+          </center>
+        </div>
+        <p><font face="Arial,helvetica,verdana,geneva" size="2">OR,</font></p>
+        <p><font face="Arial,helvetica,verdana,geneva" size="2">To set up a new account, all you have to do is fill out the form.
+        <a href="registration_form.htm" target="_self"><img border="0" src="../images/clickhere.gif" width="117" height="14"></a></font></p>
+      </form>
+    </td>
+  </tr>
+</table>
+
+</body>
+
+</html>

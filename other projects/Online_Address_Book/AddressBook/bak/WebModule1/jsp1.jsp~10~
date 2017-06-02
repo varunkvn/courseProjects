@@ -1,0 +1,21 @@
+<html>
+<head>
+<title>
+jsp1
+</title>
+</head>
+<body bgcolor="#ffffff">
+  <form action="http://localhost:8080/WebModule1/searchserver">
+    <input type="text" name="search">
+      <input type="submit" value="CLick">
+        </form>
+                 <%
+    String name=(String)request.getAttribute("ho");
+	String add=(String)request.getAttribute("ha");
+    	out.println(name+" " +add );
+		%>
+<h1>
+JBuilder Generated JSP
+</h1>
+</body>
+</html>

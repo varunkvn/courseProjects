@@ -1,0 +1,93 @@
+<html>
+<HEAD>
+
+<SCRIPT LANGUAGE="Javascript">
+
+function newCookie(name,value,expiredays) {
+	d = new Date();
+	d.setDate(d.getDate() + expiredays);
+
+       document.cookie = name + "=" + value +"; expires="+ d.toGMTString()+";"
+ 
+     }
+
+     function getCookie(name) {
+       var cookieFound = false;
+       var start = 0;
+       var end = 0;
+       var cookieString = document.cookie;
+
+       var i = 0;
+
+       // SCAN THE COOKIE FOR name
+       while (i <= cookieString.length) {
+         start = i;
+         end = start + name.length;
+         if (cookieString.substring(start,end) == name) {
+           cookieFound = true;
+           break;
+         }
+         i++;
+       }
+
+       // IS name FOUND?
+       if (cookieFound) {
+         start = end + 1;
+         end = document.cookie.indexOf(";",start); 
+         if (end < start)
+           end = document.cookie.length; 
+         return document.cookie.substring(start,end); 
+       }
+       return "";
+     }
+ 
+function validate(ans,correct)
+{
+  user=getCookie('username'); 
+  if (ans==correct)
+  {	
+	 newCookie(user+'q12',1,360);
+  }
+  else
+  {
+	newCookie(user+'q12',0,360);
+  }
+}
+
+</SCRIPT>
+<title></title>
+</HEAD>
+
+<BODY LINK="#0000FF" BACKGROUND="../images/GENERIC.gif" topmargin="10" leftmargin="20">
+
+<p><b>Section B</b></p>
+<hr>
+<p><b> Question 12</b></p>
+<p></p>
+<br>
+
+<form name="myform">
+  <p>The 
+    <input type="next" name="answer">
+    relates to personal identification number.</p>
+  <p> 
+    <input type="hidden" name="myanswer">
+  </p>
+  <table width="94%" border="0">
+    <tr> 
+      <td width="29%"> 
+        <div align="left"><a href="Question%2011.htm">&lt;Prev</a></div>
+      </td>
+      <td width="40%"> 
+        <div align="center"> 
+          <input type="button" value="    OK    " onClick="validate(myanswer.value,'C')" name="button">
+        </div>
+      </td>
+      <td width="31%"> 
+        <div align="right"><a href="Question%2013.htm">Next></a></div>
+      </td>
+    </tr>
+  </table>
+  </form>
+</body>
+</html>
